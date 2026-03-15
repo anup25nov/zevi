@@ -8,6 +8,8 @@ import '../features/chat/screens/chat_screen.dart';
 import '../features/chat/screens/morning_briefing_screen.dart';
 import '../features/upgrade/screens/upgrade_screen.dart';
 import '../features/settings/screens/settings_screen.dart';
+import '../features/settings/screens/subscription_screen.dart';
+import '../features/settings/screens/connected_accounts_screen.dart';
 import '../features/onboarding/screens/splash_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
 
@@ -59,8 +61,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/subscription',
-        builder: (context, state) =>
-            const PlaceholderScreen(title: 'Subscription'),
+        builder: (context, state) => const SubscriptionScreen(),
       ),
       GoRoute(
         path: '/upgrade',
@@ -68,8 +69,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/connected-accounts',
-        builder: (context, state) =>
-            const PlaceholderScreen(title: 'Connected Accounts'),
+        builder: (context, state) => const ConnectedAccountsScreen(),
       ),
     ],
   );
