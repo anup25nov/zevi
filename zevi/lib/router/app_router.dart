@@ -7,6 +7,7 @@ import '../features/auth/screens/permissions_screen.dart';
 import '../features/chat/screens/chat_screen.dart';
 import '../features/chat/screens/morning_briefing_screen.dart';
 import '../features/upgrade/screens/upgrade_screen.dart';
+import '../features/settings/screens/settings_screen.dart';
 import '../features/onboarding/screens/splash_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
 
@@ -54,8 +55,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/settings',
-        builder: (context, state) =>
-            const PlaceholderScreen(title: 'Settings'),
+        builder: (context, state) => const SettingsScreen(),
       ),
       GoRoute(
         path: '/subscription',
