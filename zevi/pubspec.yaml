@@ -107,7 +107,7 @@ flutter:
 # ─── flutter_launcher_icons ───────────────────────────────────────────────────
 flutter_launcher_icons:
   android: true
-  ios: false
+  ios: true
   image_path: "assets/icon/zevi_icon.png"
   adaptive_icon_background: "#0D0D12"
   adaptive_icon_foreground: "assets/icon/zevi_icon_foreground.png"

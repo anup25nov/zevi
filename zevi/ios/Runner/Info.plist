@@ -70,5 +70,28 @@
 		<true/>
 		<key>UIViewControllerBasedStatusBarAppearance</key>
 		<false/>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>Zevi needs access to the microphone for voice commands and transcription.</string>
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>Zevi uses your location to provide context-aware assistance.</string>
+		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+		<string>Zevi uses your location to provide context-aware assistance even in the background.</string>
+		<key>NSLocationAlwaysUsageDescription</key>
+		<string>Zevi uses your location to provide context-aware assistance even in the background.</string>
+		<key>NSCalendarsUsageDescription</key>
+		<string>Zevi needs calendar access to manage your schedule.</string>
+		<key>NSContactsUsageDescription</key>
+		<string>Zevi uses contacts to help you connect with people.</string>
+		<key>CFBundleURLTypes</key>
+		<array>
+			<dict>
+				<key>CFBundleTypeRole</key>
+				<string>Editor</string>
+				<key>CFBundleURLSchemes</key>
+				<array>
+					<string>com.googleusercontent.apps.REPLACE_WITH_YOUR_CLIENT_ID</string>
+				</array>
+			</dict>
+		</array>
 	</dict>
 </plist>
