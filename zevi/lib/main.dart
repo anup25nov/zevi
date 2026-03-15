@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'app.dart';
 
 void main() async {
@@ -13,12 +12,6 @@ void main() async {
   } catch (e) {
     debugPrint('Failed to load .env file: $e');
   }
-
-  // Stripe MUST be initialized before runApp on web.
-  // Falls back to a placeholder key if not configured — keeps app functional.
-  Stripe.publishableKey = dotenv.env['STRIPE_KEY']?.isNotEmpty == true
-      ? dotenv.env['STRIPE_KEY']!
-      : 'pk_test_placeholder_zevi_dev';
 
   runApp(
     const ProviderScope(
