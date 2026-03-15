@@ -30,7 +30,7 @@ class EmailPreviewCard extends StatelessWidget {
         color: const Color(0xFF0F0E14),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: AppColors.white.withOpacity(0.08),
+          color: AppColors.white.withValues(alpha: 0.08),
           width: 0.5,
         ),
       ),
@@ -47,7 +47,7 @@ class EmailPreviewCard extends StatelessWidget {
           Container(
             margin: const EdgeInsets.symmetric(vertical: 10),
             height: 0.5,
-            color: AppColors.white.withOpacity(0.08),
+            color: AppColors.white.withValues(alpha: 0.08),
           ),
 
           // Body preview
@@ -58,7 +58,7 @@ class EmailPreviewCard extends StatelessWidget {
                     end: Alignment.bottomCenter,
                     colors: [
                       AppColors.white,
-                      AppColors.white.withOpacity(0.0),
+                      AppColors.white.withValues(alpha: 0.0),
                     ],
                     stops: const [0.6, 1.0],
                   ).createShader(bounds),
@@ -78,7 +78,7 @@ class EmailPreviewCard extends StatelessWidget {
                 onPressed: onEdit,
                 style: OutlinedButton.styleFrom(
                   side: BorderSide(
-                    color: AppColors.white.withOpacity(0.2),
+                    color: AppColors.white.withValues(alpha: 0.2),
                     width: 0.5,
                   ),
                   shape: RoundedRectangleBorder(
@@ -93,7 +93,7 @@ class EmailPreviewCard extends StatelessWidget {
                   'Edit',
                   style: GoogleFonts.inter(
                     fontSize: 13,
-                    color: AppColors.white.withOpacity(0.7),
+                    color: AppColors.white.withValues(alpha: 0.7),
                   ),
                 ),
               ),
@@ -143,7 +143,7 @@ class _MetaRow extends StatelessWidget {
           label,
           style: GoogleFonts.spaceGrotesk(
             fontSize: 12,
-            color: AppColors.white.withOpacity(0.4),
+            color: AppColors.white.withValues(alpha: 0.4),
           ),
         ),
         const SizedBox(width: 6),
@@ -152,7 +152,7 @@ class _MetaRow extends StatelessWidget {
             value,
             style: GoogleFonts.inter(
               fontSize: 12,
-              color: AppColors.white.withOpacity(0.75),
+              color: AppColors.white.withValues(alpha: 0.75),
             ),
           ),
         ),
@@ -171,7 +171,7 @@ class _BodyText extends StatelessWidget {
       text,
       style: GoogleFonts.inter(
         fontSize: 13,
-        color: AppColors.white.withOpacity(0.65),
+        color: AppColors.white.withValues(alpha: 0.65),
         height: 1.6,
       ),
     );

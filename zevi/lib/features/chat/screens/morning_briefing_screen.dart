@@ -116,7 +116,7 @@ class _GlassAppBar extends StatelessWidget {
             left: 16,
             right: 16,
           ),
-          color: AppColors.inkBg.withOpacity(0.8),
+          color: AppColors.inkBg.withValues(alpha: 0.8),
           child: Row(
             children: [
               GestureDetector(
@@ -180,7 +180,7 @@ class _BottomNav extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border(
               top: BorderSide(
-                color: AppColors.white.withOpacity(0.05),
+                color: AppColors.white.withValues(alpha: 0.05),
                 width: 0.5,
               ),
             ),

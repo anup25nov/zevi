@@ -65,7 +65,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                   'Skip',
                   style: GoogleFonts.spaceGrotesk(
                     fontSize: 13,
-                    color: AppColors.white.withOpacity(0.35),
+                    color: AppColors.white.withValues(alpha: 0.35),
                   ),
                 ),
               ),
@@ -94,7 +94,7 @@ class _DotIndicator extends StatelessWidget {
           width: isActive ? 20 : 8,
           height: 8,
           decoration: BoxDecoration(
-            color: isActive ? AppColors.violet : AppColors.white.withOpacity(0.2),
+            color: isActive ? AppColors.violet : AppColors.white.withValues(alpha: 0.2),
             borderRadius: BorderRadius.circular(4),
           ),
         );
@@ -145,7 +145,7 @@ class _Slide1 extends StatelessWidget {
           child: Text(
             'Zevi handles your calendar, emails, reminders — all from one chat.',
             textAlign: TextAlign.center,
-            style: AppTextStyles.body(15, color: AppColors.white.withOpacity(0.5)),
+            style: AppTextStyles.body(15, color: AppColors.white.withValues(alpha: 0.5)),
           ),
         ),
         
@@ -182,7 +182,7 @@ class _Slide1 extends StatelessWidget {
           child: RichText(
             text: TextSpan(
               text: 'Already have an account? ',
-              style: GoogleFonts.inter(fontSize: 12, color: AppColors.white.withOpacity(0.35)),
+              style: GoogleFonts.inter(fontSize: 12, color: AppColors.white.withValues(alpha: 0.35)),
               children: [
                 TextSpan(
                   text: 'Sign in',
@@ -212,7 +212,7 @@ class _ActionCard extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: AppColors.surface,
-          border: Border.all(color: AppColors.violet.withOpacity(0.5), width: 0.5),
+          border: Border.all(color: AppColors.violet.withValues(alpha: 0.5), width: 0.5),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Row(
@@ -274,7 +274,7 @@ class _Slide2 extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                   decoration: BoxDecoration(
                     color: AppColors.surface,
-                    border: Border.all(color: AppColors.violet.withOpacity(0.25), width: 0.5),
+                    border: Border.all(color: AppColors.violet.withValues(alpha: 0.25), width: 0.5),
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(16),
                       topRight: Radius.circular(16),
@@ -309,7 +309,7 @@ class _Slide2 extends StatelessWidget {
           child: Text(
             'Zevi doesn\'t just answer. It connects to your calendar, Gmail, maps, and more to actually get things done.',
             textAlign: TextAlign.center,
-            style: AppTextStyles.body(15, color: AppColors.white.withOpacity(0.5)),
+            style: AppTextStyles.body(15, color: AppColors.white.withValues(alpha: 0.5)),
           ),
         ),
         
@@ -368,7 +368,7 @@ class _Slide3 extends StatelessWidget {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.violet.withOpacity(0.4),
+                    color: AppColors.violet.withValues(alpha: 0.4),
                     blurRadius: 80,
                     spreadRadius: 20,
                   ),
@@ -408,7 +408,7 @@ class _Slide3 extends StatelessWidget {
         const SizedBox(height: 16),
         Text(
           'Sign in with Google. No passwords. No setup.',
-          style: AppTextStyles.body(15, color: AppColors.white.withOpacity(0.5)),
+          style: AppTextStyles.body(15, color: AppColors.white.withValues(alpha: 0.5)),
         ),
         const SizedBox(height: 24),
         
@@ -428,7 +428,7 @@ class _Slide3 extends StatelessWidget {
                 Expanded(
                   child: Text(
                     'Zevi never stores your emails or calendar data.',
-                    style: AppTextStyles.label(12, color: AppColors.white.withOpacity(0.5)),
+                    style: AppTextStyles.label(12, color: AppColors.white.withValues(alpha: 0.5)),
                   ),
                 ),
               ],
@@ -468,7 +468,7 @@ class _Slide3 extends StatelessWidget {
         
         Text(
           'By continuing you agree to our Terms & Privacy Policy',
-          style: GoogleFonts.inter(fontSize: 11, color: AppColors.white.withOpacity(0.3)),
+          style: GoogleFonts.inter(fontSize: 11, color: AppColors.white.withValues(alpha: 0.3)),
         ),
         const SizedBox(height: 32),
       ],

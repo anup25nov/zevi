@@ -83,10 +83,10 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                     height: 120,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: AppColors.violet.withOpacity(0.15),
+                      color: AppColors.violet.withValues(alpha: 0.15),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.violet.withOpacity(0.4),
+                          color: AppColors.violet.withValues(alpha: 0.4),
                           blurRadius: 80,
                           spreadRadius: 20,
                         ),
@@ -122,7 +122,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
               Text(
                 'Your AI. No setup.',
                 style: AppTextStyles.body(14,
-                    color: AppColors.white.withOpacity(0.4),
+                    color: AppColors.white.withValues(alpha: 0.4),
                     weight: FontWeight.w400),
               ),
             ],

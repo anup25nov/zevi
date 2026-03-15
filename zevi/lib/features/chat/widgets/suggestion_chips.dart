@@ -67,12 +67,12 @@ class _Chip extends StatelessWidget {
           color: bg,
           borderRadius: BorderRadius.circular(12),
           border: hasBorder
-              ? Border.all(color: AppColors.white.withOpacity(0.05), width: 1)
+              ? Border.all(color: AppColors.white.withValues(alpha: 0.05), width: 1)
               : null,
           boxShadow: !hasBorder
               ? [
                   BoxShadow(
-                    color: AppColors.violet.withOpacity(0.2),
+                    color: AppColors.violet.withValues(alpha: 0.2),
                     blurRadius: 12,
                     offset: const Offset(0, 4),
                   ),

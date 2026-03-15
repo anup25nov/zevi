@@ -61,7 +61,7 @@ class SubscriptionScreen extends ConsumerWidget {
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.06),
+                          color: Colors.black.withValues(alpha: 0.06),
                           blurRadius: 8,
                           offset: const Offset(0, 2),
                         ),
@@ -78,7 +78,7 @@ class SubscriptionScreen extends ConsumerWidget {
               flexibleSpace: ClipRRect(
                 child: BackdropFilter(
                   filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-                  child: Container(color: Colors.white.withOpacity(0.82)),
+                  child: Container(color: Colors.white.withValues(alpha: 0.82)),
                 ),
               ),
               title: Text(
@@ -163,7 +163,7 @@ class SubscriptionScreen extends ConsumerWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 20,
             offset: const Offset(0, 4),
           ),
@@ -258,7 +258,7 @@ class SubscriptionScreen extends ConsumerWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 20,
             offset: const Offset(0, 4),
           ),
@@ -479,7 +479,7 @@ class _SettingsGroup extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 20,
             offset: const Offset(0, 4),
           ),
@@ -513,14 +513,12 @@ class _SettingsRow extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
   final String label;
-  final String? value;
   final VoidCallback? onTap;
 
   const _SettingsRow({
     required this.icon,
     required this.iconColor,
     required this.label,
-    this.value,
     this.onTap,
   });
 
@@ -548,10 +546,6 @@ class _SettingsRow extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (value != null)
-                  Text(value!,
-                      style:
-                          GoogleFonts.inter(fontSize: 13, color: _textMid)),
                 const SizedBox(width: 4),
                 const Icon(Symbols.chevron_right, color: _chevron, size: 18),
               ],

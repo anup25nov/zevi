@@ -14,7 +14,6 @@ import '../../../core/theme/app_colors.dart';
 // ─────────────────────────────────────────────
 const _textDark    = Color(0xFF131318);
 const _textSubtitle = Color(0xFF47445A);
-const _textLabel   = Color(0xFF484556);
 const _cardBg      = Colors.white;
 const _permBg      = AppColors.ashBg;
 const _darkAvatar  = Color(0xFF0E0E13);
@@ -110,7 +109,7 @@ class _ConnectedAccountsScreenState extends State<ConnectedAccountsScreen> {
                           borderRadius: BorderRadius.circular(12),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.06),
+                              color: Colors.black.withValues(alpha: 0.06),
                               blurRadius: 8,
                               offset: const Offset(0, 2),
                             ),
@@ -128,7 +127,7 @@ class _ConnectedAccountsScreenState extends State<ConnectedAccountsScreen> {
                     child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
                       child: Container(
-                        color: AppColors.ashBg.withOpacity(0.82),
+                        color: AppColors.ashBg.withValues(alpha: 0.82),
                       ),
                     ),
                   ),
@@ -290,7 +289,7 @@ class _ConnectedAccountsScreenState extends State<ConnectedAccountsScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Divider(color: const Color(0xFF484556).withOpacity(0.1), height: 1),
+        Divider(color: const Color(0xFF484556).withValues(alpha: 0.1), height: 1),
         const SizedBox(height: 20),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -381,7 +380,7 @@ class _AccountCard extends StatelessWidget {
         border: Border.all(color: Colors.white, width: 1),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.03),
+            color: Colors.black.withValues(alpha: 0.03),
             blurRadius: 20,
             offset: const Offset(0, 4),
           ),
@@ -401,7 +400,7 @@ class _AccountCard extends StatelessWidget {
                   width: 48,
                   height: 48,
                   decoration: BoxDecoration(
-                    color: _darkAvatar.withOpacity(0.05),
+                    color: _darkAvatar.withValues(alpha: 0.05),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: const Center(
@@ -686,13 +685,13 @@ class _AddAccountButtonState extends State<_AddAccountButton> {
           padding: const EdgeInsets.symmetric(vertical: 28),
           decoration: BoxDecoration(
             color: _hovered
-                ? AppColors.violet.withOpacity(0.04)
+                ? AppColors.violet.withValues(alpha: 0.04)
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(12),
           ),
           child: CustomPaint(
             painter: _DashedBorderPainter(
-              color: AppColors.violet.withOpacity(0.3),
+              color: AppColors.violet.withValues(alpha: 0.3),
               borderRadius: 12,
               dashWidth: 8,
               dashGap: 6,
@@ -708,7 +707,7 @@ class _AddAccountButtonState extends State<_AddAccountButton> {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: AppColors.violet.withOpacity(0.1),
+                      color: AppColors.violet.withValues(alpha: 0.1),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(
@@ -761,7 +760,7 @@ class _FloatingPillNav extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.25),
+            color: Colors.black.withValues(alpha: 0.25),
             blurRadius: 24,
             offset: const Offset(0, 8),
           ),

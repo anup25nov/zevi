@@ -106,12 +106,12 @@ class _ContactCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
         decoration: BoxDecoration(
           color: isSelected
-              ? AppColors.violet.withOpacity(0.15)
+              ? AppColors.violet.withValues(alpha: 0.15)
               : const Color(0xFF1C1B22),
           border: Border.all(
             color: isSelected
                 ? AppColors.violet
-                : AppColors.white.withOpacity(0.08),
+                : AppColors.white.withValues(alpha: 0.08),
             width: isSelected ? 1.5 : 0.5,
           ),
           borderRadius: BorderRadius.circular(10),
@@ -130,7 +130,7 @@ class _ContactCard extends StatelessWidget {
                           isSelected ? FontWeight.w600 : FontWeight.w500,
                       color: isSelected
                           ? AppColors.white
-                          : AppColors.white.withOpacity(0.7),
+                          : AppColors.white.withValues(alpha: 0.7),
                     ),
                   ),
                   const SizedBox(height: 2),
@@ -139,8 +139,8 @@ class _ContactCard extends StatelessWidget {
                     style: GoogleFonts.inter(
                       fontSize: 12,
                       color: isSelected
-                          ? AppColors.white.withOpacity(0.45)
-                          : AppColors.white.withOpacity(0.35),
+                          ? AppColors.white.withValues(alpha: 0.45)
+                          : AppColors.white.withValues(alpha: 0.35),
                     ),
                   ),
                 ],

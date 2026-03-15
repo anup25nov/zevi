@@ -133,7 +133,7 @@ class _AiBubble extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: AppColors.surface,
                       border: Border.all(
-                        color: AppColors.violet.withOpacity(0.25),
+                        color: AppColors.violet.withValues(alpha: 0.25),
                         width: 0.5,
                       ),
                       borderRadius: const BorderRadius.only(
@@ -179,7 +179,7 @@ class _AiBubble extends StatelessWidget {
                   _formatTime(message.timestamp),
                   style: GoogleFonts.inter(
                     fontSize: 11,
-                    color: AppColors.white.withOpacity(0.25),
+                    color: AppColors.white.withValues(alpha: 0.25),
                   ),
                 ),
               ],
@@ -277,7 +277,7 @@ class _TypingDotsState extends State<_TypingDots>
               width: 6,
               height: 6,
               decoration: BoxDecoration(
-                color: AppColors.white.withOpacity(opacity),
+                color: AppColors.white.withValues(alpha: opacity),
                 shape: BoxShape.circle,
               ),
             );

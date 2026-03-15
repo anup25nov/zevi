@@ -59,7 +59,7 @@ class UpgradeScreen extends ConsumerWidget {
                         borderRadius: BorderRadius.circular(14),
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.violet.withOpacity(0.2),
+                            color: AppColors.violet.withValues(alpha: 0.2),
                             blurRadius: 30,
                           ),
                         ],
@@ -132,7 +132,7 @@ class UpgradeScreen extends ConsumerWidget {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.inter(
                           fontSize: 10,
-                          color: AppColors.onSurfaceVariant.withOpacity(0.6),
+                          color: AppColors.onSurfaceVariant.withValues(alpha: 0.6),
                           height: 1.6,
                         ),
                       ),
@@ -166,7 +166,7 @@ class _ProPlanCard extends StatelessWidget {
         border: Border.all(color: AppColors.violet, width: 1.5),
         boxShadow: [
           BoxShadow(
-            color: AppColors.violet.withOpacity(0.08),
+            color: AppColors.violet.withValues(alpha: 0.08),
             blurRadius: 30,
             offset: const Offset(0, 8),
           ),
@@ -233,7 +233,7 @@ class _ProPlanCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Divider(
-                  color: AppColors.white.withOpacity(0.08),
+                  color: AppColors.white.withValues(alpha: 0.08),
                   height: 1,
                   thickness: 0.5,
                 ),
@@ -252,7 +252,7 @@ class _ProPlanCard extends StatelessWidget {
                           f,
                           style: GoogleFonts.inter(
                             fontSize: 13,
-                            color: AppColors.white.withOpacity(0.8),
+                            color: AppColors.white.withValues(alpha: 0.8),
                           ),
                         ),
                       ],
@@ -272,12 +272,12 @@ class _ProPlanCard extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.violet,
                       foregroundColor: AppColors.white,
-                      disabledBackgroundColor: AppColors.violet.withOpacity(0.5),
+                      disabledBackgroundColor: AppColors.violet.withValues(alpha: 0.5),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14),
                       ),
                       elevation: 8,
-                      shadowColor: AppColors.violet.withOpacity(0.3),
+                      shadowColor: AppColors.violet.withValues(alpha: 0.3),
                     ),
                     child: isLoading
                         ? const SizedBox(

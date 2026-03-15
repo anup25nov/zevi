@@ -141,7 +141,7 @@ class _GlassAppBar extends StatelessWidget {
             left: 16,
             right: 16,
           ),
-          color: AppColors.inkBg.withOpacity(0.8),
+          color: AppColors.inkBg.withValues(alpha: 0.8),
           child: Row(
             children: [
               const Icon(Symbols.arrow_back,
@@ -177,10 +177,10 @@ class _GlassAppBar extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
-                    color: AppColors.violet.withOpacity(0.15),
+                    color: AppColors.violet.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(
-                        color: AppColors.violet.withOpacity(0.3), width: 0.5),
+                        color: AppColors.violet.withValues(alpha: 0.3), width: 0.5),
                   ),
                   child: Row(
                     children: [

@@ -157,7 +157,7 @@ class _BentoCard extends StatelessWidget {
         color: AppColors.inkDeep,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: AppColors.white.withOpacity(0.05),
+          color: AppColors.white.withValues(alpha: 0.05),
           width: 1,
         ),
       ),
@@ -341,12 +341,12 @@ class _ChipButtonState extends State<_ChipButton>
             borderRadius: BorderRadius.circular(12),
             border: !widget.isPrimary
                 ? Border.all(
-                    color: AppColors.white.withOpacity(0.05), width: 1)
+                    color: AppColors.white.withValues(alpha: 0.05), width: 1)
                 : null,
             boxShadow: widget.isPrimary
                 ? [
                     BoxShadow(
-                      color: AppColors.violet.withOpacity(0.3),
+                      color: AppColors.violet.withValues(alpha: 0.3),
                       blurRadius: 12,
                       offset: const Offset(0, 4),
                     ),

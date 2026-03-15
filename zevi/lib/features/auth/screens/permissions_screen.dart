@@ -42,7 +42,7 @@ class PermissionsScreen extends StatelessWidget {
           preferredSize: const Size.fromHeight(3),
           child: LinearProgressIndicator(
             value: 0.6,
-            backgroundColor: AppColors.white.withOpacity(0.1),
+            backgroundColor: AppColors.white.withValues(alpha: 0.1),
             valueColor: const AlwaysStoppedAnimation<Color>(AppColors.violet),
             minHeight: 3,
           ),
@@ -59,7 +59,7 @@ class PermissionsScreen extends StatelessWidget {
                   const SizedBox(height: 8),
                   Text(
                     'To act on your behalf, Zevi requires secure connections to your core services.',
-                    style: AppTextStyles.body(14, color: AppColors.white.withOpacity(0.5)),
+                    style: AppTextStyles.body(14, color: AppColors.white.withValues(alpha: 0.5)),
                   ),
                   const SizedBox(height: 32),
                   
@@ -103,7 +103,7 @@ class PermissionsScreen extends StatelessWidget {
                 color: AppColors.inkBg,
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.inkBg.withOpacity(0.8),
+                    color: AppColors.inkBg.withValues(alpha: 0.8),
                     blurRadius: 20,
                     offset: const Offset(0, -10),
                   ),
@@ -132,7 +132,7 @@ class PermissionsScreen extends StatelessWidget {
                     onPressed: () => _completeSetup(context),
                     child: Text(
                       'Skip for now',
-                      style: GoogleFonts.inter(fontSize: 14, color: AppColors.white.withOpacity(0.4)),
+                      style: GoogleFonts.inter(fontSize: 14, color: AppColors.white.withValues(alpha: 0.4)),
                     ),
                   ),
                 ],
@@ -170,7 +170,7 @@ class _PermissionCard extends StatelessWidget {
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: AppColors.violet.withOpacity(0.15),
+              color: AppColors.violet.withValues(alpha: 0.15),
               shape: BoxShape.circle,
             ),
             child: Icon(icon, color: AppColors.violet, size: 20),
@@ -193,7 +193,7 @@ class _PermissionCard extends StatelessWidget {
                   description,
                   style: GoogleFonts.spaceGrotesk(
                     fontSize: 12,
-                    color: AppColors.white.withOpacity(0.5),
+                    color: AppColors.white.withValues(alpha: 0.5),
                   ),
                 ),
               ],

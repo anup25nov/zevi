@@ -61,7 +61,7 @@ class SignInScreen extends ConsumerWidget {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.violet.withOpacity(0.4),
+                        color: AppColors.violet.withValues(alpha: 0.4),
                         blurRadius: 80,
                         spreadRadius: 20,
                       ),
@@ -101,7 +101,7 @@ class SignInScreen extends ConsumerWidget {
             const SizedBox(height: 16),
             Text(
               'Sign in with Google. No passwords. No setup.',
-              style: AppTextStyles.body(15, color: AppColors.white.withOpacity(0.5)),
+              style: AppTextStyles.body(15, color: AppColors.white.withValues(alpha: 0.5)),
             ),
             const SizedBox(height: 24),
             
@@ -121,7 +121,7 @@ class SignInScreen extends ConsumerWidget {
                     Expanded(
                       child: Text(
                         'Zevi never stores your emails or calendar data.',
-                        style: AppTextStyles.label(12, color: AppColors.white.withOpacity(0.5)),
+                        style: AppTextStyles.label(12, color: AppColors.white.withValues(alpha: 0.5)),
                       ),
                     ),
                   ],
@@ -172,7 +172,7 @@ class SignInScreen extends ConsumerWidget {
             
             Text(
               'By continuing you agree to our Terms & Privacy Policy',
-              style: GoogleFonts.inter(fontSize: 11, color: AppColors.white.withOpacity(0.3)),
+              style: GoogleFonts.inter(fontSize: 11, color: AppColors.white.withValues(alpha: 0.3)),
             ),
             const SizedBox(height: 32),
           ],
