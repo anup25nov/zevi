@@ -1,13 +1,13 @@
-import '../features/auth/screens/sign_in_screen.dart';
-import '../features/auth/screens/permissions_screen.dart';
-import '../features/chat/screens/chat_screen.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../features/auth/screens/sign_in_screen.dart';
+import '../features/auth/screens/permissions_screen.dart';
+import '../features/chat/screens/chat_screen.dart';
+import '../features/chat/screens/morning_briefing_screen.dart';
+import '../features/upgrade/screens/upgrade_screen.dart';
 import '../features/onboarding/screens/splash_screen.dart';
-
 import '../features/onboarding/screens/onboarding_screen.dart';
 
 // Simple placeholder widget for unimplemented routes
@@ -49,20 +49,27 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const ChatScreen(),
       ),
       GoRoute(
+        path: '/briefing',
+        builder: (context, state) => const MorningBriefingScreen(),
+      ),
+      GoRoute(
         path: '/settings',
-        builder: (context, state) => const PlaceholderScreen(title: 'Settings'),
+        builder: (context, state) =>
+            const PlaceholderScreen(title: 'Settings'),
       ),
       GoRoute(
         path: '/subscription',
-        builder: (context, state) => const PlaceholderScreen(title: 'Subscription'),
+        builder: (context, state) =>
+            const PlaceholderScreen(title: 'Subscription'),
       ),
       GoRoute(
         path: '/upgrade',
-        builder: (context, state) => const PlaceholderScreen(title: 'Upgrade'),
+        builder: (context, state) => const UpgradeScreen(),
       ),
       GoRoute(
         path: '/connected-accounts',
-        builder: (context, state) => const PlaceholderScreen(title: 'Connected Accounts'),
+        builder: (context, state) =>
+            const PlaceholderScreen(title: 'Connected Accounts'),
       ),
     ],
   );
