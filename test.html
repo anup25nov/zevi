@@ -1,0 +1,3790 @@
+<!-- Zevi Design Specification -->
+{{DATA:TEXT:TEXT_1}}
+
+<!-- zevi_stitch_screen_specs.html -->
+
+<style>
+    .screen {
+        border: 0.5px solid var(--color-border-tertiary);
+        border-radius: var(--border-radius-lg);
+        overflow: hidden;
+        margin-bottom: 14px;
+    }
+
+    .screen-head {
+        padding: 10px 16px;
+        background: var(--color-background-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 0.5px solid var(--color-border-tertiary);
+    }
+
+    .screen-title {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--color-text-primary);
+    }
+
+    .screen-num {
+        font-size: 10px;
+        font-family: var(--font-mono);
+        color: var(--color-text-tertiary);
+        background: var(--color-background-tertiary);
+        padding: 2px 8px;
+        border-radius: 4px;
+    }
+
+    .screen-body {
+        padding: 14px 16px;
+    }
+
+    .prompt-box {
+        background: var(--color-background-secondary);
+        border-radius: 8px;
+        padding: 12px 14px;
+        font-size: 12px;
+        color: var(--color-text-primary);
+        line-height: 1.8;
+        font-family: var(--font-mono);
+        white-space: pre-wrap;
+        word-break: break-word;
+        margin-bottom: 10px;
+    }
+
+    .elements {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .el {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        font-size: 12px;
+        border-bottom: 0.5px solid var(--color-border-tertiary);
+        padding: 5px 0;
+    }
+
+    .el:last-child {
+        border-bottom: none;
+    }
+
+    .el-k {
+        color: var(--color-text-secondary);
+        font-family: var(--font-mono);
+        font-size: 11px;
+    }
+
+    .el-v {
+        color: var(--color-text-primary);
+    }
+
+    .tag {
+        font-size: 10px;
+        padding: 2px 7px;
+        border-radius: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .sec-divider {
+        font-size: 10px;
+        font-family: var(--font-mono);
+        color: var(--color-text-tertiary);
+        letter-spacing: 0.1em;
+        margin: 20px 0 10px;
+        padding-bottom: 6px;
+        border-bottom: 0.5px solid var(--color-border-tertiary);
+    }
+</style>
+
+<div style="padding:0.5rem 0;">
+
+    <div class="sec-divider">ONBOARDING FLOW — 4 screens</div>
+
+    <!-- SCREEN 1: SPLASH -->
+    <div class="screen">
+        <div class="screen-head">
+            <div class="screen-title">Splash Screen</div>
+            <span class="screen-num">SCREEN 01</span>
+        </div>
+        <div class="screen-body">
+            <div class="prompt-box">Dark full-screen Android app. Background color #0D0D12 (near black).
+                Centered vertically and horizontally: the wordmark "Zevi" in Satoshi Bold
+                font, 42px, white (#FFFFFF) with the last two letters "vi" in violet (#6C47FF).
+                Below the wordmark, 12px gap, a tagline in Inter Regular 14px, color
+                rgba(255,255,255,0.4): "Your AI. No setup."
+                A subtle violet glow (40% opacity, 120px blur radius) radiates behind
+                the wordmark — not a gradient, just a soft ambient light.
+                No buttons. No navigation bar. Auto-navigates after 2 seconds.</div>
+            <div class="elements">
+                <div class="el">
+                    <div class="el-k">Background</div>
+                    <div class="el-v">#0D0D12 full bleed</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Wordmark</div>
+                    <div class="el-v">Satoshi Bold 42px · "Ze" white + "vi" #6C47FF</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Tagline</div>
+                    <div class="el-v">Inter 14px · rgba(255,255,255,0.4) · centered</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Animation</div>
+                    <div class="el-v">Wordmark fades in 600ms · glow pulses once · then navigates</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Status bar</div>
+                    <div class="el-v">Light content (white icons)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 2: ONBOARDING SLIDE 1 -->
+    <div class="screen">
+        <div class="screen-head">
+            <div class="screen-title">Onboarding — Slide 1 of 3</div>
+            <span class="screen-num">SCREEN 02</span>
+        </div>
+        <div class="screen-body">
+            <div class="prompt-box">Dark screen #0D0D12. Top-right: "Skip" text button in Inter 13px,
+                color rgba(255,255,255,0.35).
+
+                Center of screen: A large abstract visual — a minimal line-art phone
+                outline (stroke only, #6C47FF, 1px) with 3 small floating action cards
+                around it. Each card is #1C1B22 with violet border 0.5px, rounded 12px,
+                containing tiny text: "Meeting scheduled", "Email sent", "Reminder set".
+                Cards float at slight angles (-8°, 0°, +6°).
+
+                Below the visual (bottom 40% of screen):
+                - Headline: Satoshi Bold 28px white: "Tell it what to do."
+                - Subtext: Inter Regular 15px rgba(255,255,255,0.5), 2 lines:
+                "Zevi handles your calendar, emails, reminders — all from one chat."
+                - Progress dots: 3 dots, first dot #6C47FF (8px wide pill), others
+                rgba(255,255,255,0.2) (6px circles). Centered.
+                - Primary button at bottom: "Get started" — full width minus 32px
+                horizontal padding, height 52px, background #6C47FF, border-radius 14px,
+                Inter SemiBold 16px white.
+                - Below button: "Already have an account? Sign in" in 12px
+                rgba(255,255,255,0.35), "Sign in" underlined.</div>
+            <div class="elements">
+                <div class="el">
+                    <div class="el-k">Visual</div>
+                    <div class="el-v">Phone outline with 3 floating action cards</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Headline</div>
+                    <div class="el-v">Satoshi Bold 28px white</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Sub</div>
+                    <div class="el-v">Inter 15px · 50% white opacity</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Dots</div>
+                    <div class="el-v">Active = violet pill · inactive = dim circle</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">CTA button</div>
+                    <div class="el-v">Full-width minus 32px · 52px height · #6C47FF</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 3: ONBOARDING SLIDE 2 -->
+    <div class="screen">
+        <div class="screen-head">
+            <div class="screen-title">Onboarding — Slide 2 of 3</div>
+            <span class="screen-num">SCREEN 03</span>
+        </div>
+        <div class="screen-body">
+            <div class="prompt-box">Same dark layout as Slide 1. Progress dot 2 is now active (violet pill).
+
+                Center visual: A minimal chat conversation mockup — 3 message bubbles:
+                - Right bubble (user): #6C47FF background, white text 12px:
+                "Schedule lunch with Rahul tomorrow 1pm"
+                - Left bubble (AI): #1C1B22, violet-tinted border, lavender text:
+                "Done. Rahul confirmed for tomorrow 1pm. Calendar updated."
+                - Below the AI bubble, a small green checkmark circle with
+                "Action completed" in 10px #1DB97C.
+
+                Below visual:
+                - Headline: "One message. Real actions."
+                - Subtext: "Zevi doesn't just answer. It connects to your calendar,
+                Gmail, maps, and more to actually get things done."
+                - Same progress dots, button says "Next →"</div>
+            <div class="elements">
+                <div class="el">
+                    <div class="el-k">Visual</div>
+                    <div class="el-v">3-bubble demo conversation with completion state</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Headline</div>
+                    <div class="el-v">"One message. Real actions."</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">CTA</div>
+                    <div class="el-v">"Next →" violet button</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 4: ONBOARDING SLIDE 3 / SIGN IN -->
+    <div class="screen">
+        <div class="screen-head">
+            <div class="screen-title">Onboarding — Slide 3 / Sign In</div>
+            <span class="screen-num">SCREEN 04</span>
+        </div>
+        <div class="screen-body">
+            <div class="prompt-box">Dark screen. Third dot active.
+
+                Top 50%: Large "Z" lettermark in Satoshi Bold, 120px, #6C47FF with
+                very subtle violet glow behind it. Below the Z: the wordmark "Zevi"
+                in 32px white.
+
+                Bottom section:
+                - Headline: "Ready in 30 seconds."
+                - Subtext: "Sign in with Google. No passwords. No setup.
+                Your data stays in your Google account."
+
+                Privacy note box: #1C1B22 background, 12px rounded, padding 12px.
+                Small lock icon (SVG, #6C47FF, 14px) left-aligned. Text:
+                "Zevi never stores your emails or calendar data. Everything
+                stays in your Google account." Inter 12px rgba(255,255,255,0.5).
+
+                Google Sign-In button: White background #FFFFFF, height 52px,
+                border-radius 14px, full width minus 32px horizontal margin.
+                Left: Google 'G' logo SVG (official colors, 20px).
+                Center text: "Continue with Google" in Inter SemiBold 15px #1A1A1A.
+
+                Below button: Inter 11px rgba(255,255,255,0.3), centered:
+                "By continuing you agree to our Terms & Privacy Policy"</div>
+            <div class="elements">
+                <div class="el">
+                    <div class="el-k">Hero</div>
+                    <div class="el-v">120px Z lettermark + "Zevi" wordmark</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Privacy note</div>
+                    <div class="el-v">Surface card with lock icon + reassurance text</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Sign-in btn</div>
+                    <div class="el-v">White bg · Google G logo · "Continue with Google"</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Footer</div>
+                    <div class="el-v">Terms link in 11px muted text</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 5: PERMISSIONS -->
+    <div class="screen">
+        <div class="screen-head">
+            <div class="screen-title">Permissions Screen</div>
+            <span class="screen-num">SCREEN 05</span>
+        </div>
+        <div class="screen-body">
+            <div class="prompt-box">Dark screen. Top: Back arrow (left) + "Setup" in center, Inter Medium
+                16px white. Progress bar below nav: thin 3px line, 60% filled in
+                #6C47FF, remainder rgba(255,255,255,0.1).
+
+                Headline area (top 25%):
+                - "Zevi needs access to" in Satoshi Bold 24px white.
+                - Subtext: "These are used only when you ask Zevi to take action.
+                You can revoke access anytime." Inter 14px rgba(255,255,255,0.5).
+
+                Permission list (vertical, 12px gap between items):
+                Each item: #1C1B22 card, border-radius 12px, padding 14px 16px.
+                Left: round icon container 40x40px, #6C47FF at 15% opacity,
+                centered SVG icon in #6C47FF, 20px.
+                Right of icon:
+                - Permission name: Inter SemiBold 14px white
+                - Why we need it: Inter 12px rgba(255,255,255,0.45), 1 line
+
+                Items:
+                1. Calendar icon · "Google Calendar" · "Schedule and read your meetings"
+                2. Mail icon · "Gmail" · "Read and send emails on your behalf"
+                3. Person icon · "Contacts" · "Find who you're talking about"
+                4. Document icon · "Google Drive" · "Create and save documents (Pro)"
+                5. Location icon · "Location" · "Find places near you"
+
+                Bottom: Full-width violet button "Allow access & continue" 52px.
+                Below: "Skip for now" ghost text link 13px rgba(255,255,255,0.35).</div>
+            <div class="elements">
+                <div class="el">
+                    <div class="el-k">Nav</div>
+                    <div class="el-v">Back arrow + "Setup" + progress bar</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Permission cards</div>
+                    <div class="el-v">5 items · icon + name + reason each</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Icons</div>
+                    <div class="el-v">40px circle · violet 15% bg · violet icon</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">CTA</div>
+                    <div class="el-v">"Allow access & continue" · violet full-width</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sec-divider">CORE EXPERIENCE — 3 screens</div>
+
+    <!-- SCREEN 6: CHAT HOME -->
+    <div class="screen">
+        <div class="screen-head">
+            <div class="screen-title">Chat Screen (Home)</div>
+            <span class="screen-num">SCREEN 06 — MAIN SCREEN</span>
+        </div>
+        <div class="screen-body">
+            <div class="prompt-box">Dark screen #0D0D12. This is the primary app screen.
+
+                TOP NAV BAR (56px height, #0D0D12, no border):
+                Left: "Zevi" wordmark — "Ze" white 18px SemiBold, "vi" #6C47FF.
+                Center: nothing (clean).
+                Right: two icons — settings gear (24px, rgba(255,255,255,0.5))
+                and avatar circle (32px, shows user's Google profile photo or
+                initials on #6C47FF bg).
+
+                CHAT AREA (scrollable, fills screen minus nav and input bar):
+                Background #0D0D12. Vertical padding 16px.
+
+                When empty (first time): centered in screen:
+                - "Good morning, [Name]" Satoshi Bold 22px white
+                - "What do you need done today?" Inter 15px rgba(255,255,255,0.4)
+                - Below: 3 suggestion chips in a row, each #1C1B22,
+                border 0.5px rgba(255,255,255,0.1), border-radius 20px,
+                padding 8px 14px, text 12px rgba(255,255,255,0.6):
+                "Schedule something", "Draft an email", "Remind me"
+
+                AI BUBBLE (left-aligned, max-width 85%):
+                Small "Z" avatar circle (24px, #6C47FF) top-left of bubble.
+                Bubble: #1C1B22 bg, border 0.5px rgba(108,71,255,0.25),
+                border-radius 18px 18px 18px 4px, padding 10px 14px.
+                Text: Inter 14px #E8E3FF, line-height 1.55.
+                Completed action text: #1DB97C.
+                Timestamp: 11px rgba(255,255,255,0.25), below bubble.
+
+                USER BUBBLE (right-aligned, max-width 80%):
+                Bubble: #6C47FF bg, border-radius 18px 18px 4px 18px, padding 10px 14px.
+                Text: Inter 14px white.
+                Timestamp right-aligned below bubble, 11px rgba(255,255,255,0.3).
+
+                TYPING INDICATOR: AI bubble with 3 animated dots,
+                same styling as AI bubble, dots are white 6px circles.
+
+                INPUT BAR (fixed bottom, #0D0D12 bg, top border 0.5px rgba(255,255,255,0.06)):
+                Height 72px. Horizontal padding 16px. Vertically centered.
+                Left: mic button — 40px circle, #1C1B22, violet mic SVG icon 18px.
+                Center: text input — #1C1B22 bg, border-radius 22px,
+                border 0.5px rgba(255,255,255,0.1), padding 10px 16px,
+                placeholder "Ask anything..." Inter 14px rgba(255,255,255,0.25).
+                Right: send button — 40px circle, #6C47FF bg, white arrow SVG 18px.
+                When mic is recording: mic button pulses with violet ring animation.</div>
+            <div class="elements">
+                <div class="el">
+                    <div class="el-k">Nav</div>
+                    <div class="el-v">Logo left · settings + avatar right · no border</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Empty state</div>
+                    <div class="el-v">Greeting + 3 suggestion chips</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">AI bubble</div>
+                    <div class="el-v">Z avatar · #1C1B22 · violet border · lavender text</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">User bubble</div>
+                    <div class="el-v">#6C47FF · white text · right-aligned</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Input bar</div>
+                    <div class="el-v">Mic (left) + input (center) + send (right) · fixed bottom</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Recording state</div>
+                    <div class="el-v">Mic pulses violet ring · waveform in input field</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 7: DISAMBIGUATION -->
+    <div class="screen">
+        <div class="screen-head">
+            <div class="screen-title">Disambiguation State (within Chat)</div>
+            <span class="screen-num">SCREEN 07</span>
+        </div>
+        <div class="screen-body">
+            <div class="prompt-box">This is not a separate screen — it appears as part of the chat flow.
+
+                After the AI bubble text "Found 3 contacts named Rahul. Which one?",
+                inline contact picker appears inside the chat area:
+
+                Contact option cards (stacked vertically, 6px gap):
+                Selected state card:
+                bg rgba(108,71,255,0.15), border 1.5px #6C47FF, radius 10px,
+                padding 10px 14px.
+                Top: contact name Inter SemiBold 13px white.
+                Bottom: email + label (Work / Friend / Client) Inter 12px
+                rgba(255,255,255,0.45).
+
+                Unselected state card:
+                bg #1C1B22, border 0.5px rgba(255,255,255,0.08), same sizing.
+                Name Inter Medium 13px rgba(255,255,255,0.7).
+                Email + label rgba(255,255,255,0.35).
+
+                Max 4 cards shown. If more, "See all contacts →" text link below.
+
+                When a card is tapped: it gets the selected state styling +
+                a checkmark icon (white, 14px) appears right-aligned.
+                The AI then continues the conversation.</div>
+            <div class="elements">
+                <div class="el">
+                    <div class="el-k">Selected card</div>
+                    <div class="el-v">Violet tint bg + 1.5px violet border + checkmark</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Unselected card</div>
+                    <div class="el-v">#1C1B22 + dim border + muted text</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Layout</div>
+                    <div class="el-v">Inline in chat — not a modal or sheet</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 8: EMAIL CONFIRMATION -->
+    <div class="screen">
+        <div class="screen-head">
+            <div class="screen-title">Email Preview / Confirmation (within Chat)</div>
+            <span class="screen-num">SCREEN 08</span>
+        </div>
+        <div class="screen-body">
+            <div class="prompt-box">Appears inline in chat as an expanded AI bubble.
+
+                After AI text "Here's your email draft — send it?":
+
+                Email preview card inside the bubble:
+                bg #0F0E14 (slightly darker than surface), border-radius 12px,
+                border 0.5px rgba(255,255,255,0.08), padding 14px, margin-top 8px.
+
+                Row 1: "To:" label rgba(255,255,255,0.4) 12px + name/email value
+                rgba(255,255,255,0.7) 12px.
+                Row 2: "Subject:" label + subject value.
+                Divider line 0.5px rgba(255,255,255,0.08).
+                Email body: first 3 lines shown, Inter 13px rgba(255,255,255,0.65),
+                line-height 1.6. If longer, "..." fade out at bottom.
+
+                Below preview, two action buttons side by side:
+                Left: "Edit" ghost button — border 0.5px rgba(255,255,255,0.2),
+                rgba(255,255,255,0.7) text, border-radius 10px, padding 8px 16px.
+                Right: "Send" primary button — #6C47FF bg, white text,
+                border-radius 10px, padding 8px 20px, Inter SemiBold 13px.</div>
+            <div class="elements">
+                <div class="el">
+                    <div class="el-k">Preview card</div>
+                    <div class="el-v">To + Subject + body preview · dark nested card</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Actions</div>
+                    <div class="el-v">"Edit" ghost + "Send" violet · side by side</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Layout</div>
+                    <div class="el-v">Inline in chat bubble · not a bottom sheet</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sec-divider">MONETISATION — 2 screens</div>
+
+    <!-- SCREEN 9: UPGRADE -->
+    <div class="screen">
+        <div class="screen-head">
+            <div class="screen-title">Upgrade / Paywall Screen</div>
+            <span class="screen-num">SCREEN 09</span>
+        </div>
+        <div class="screen-body">
+            <div class="prompt-box">Dark screen. Opened when free limit is hit or doc creation attempted.
+                NOT a modal — full screen with dismiss X top-right.
+
+                TOP SECTION (dark #0D0D12):
+                X button top-right 24px rgba(255,255,255,0.5).
+                Center: Crown icon SVG #6C47FF 36px.
+                Below: "Upgrade to Zevi Pro" Satoshi Bold 26px white.
+                Below: current limit message in Inter 14px rgba(255,255,255,0.5):
+                "You've used all 50 free messages this month."
+
+                PLAN CARD (full width minus 32px, margin 24px top):
+                bg #1C1B22, border 1.5px #6C47FF, border-radius 16px, padding 20px.
+                Top-right corner badge: "Most Popular" — small pill,
+                bg #6C47FF, white text 10px Mono.
+                Plan name: "Pro" Satoshi Bold 20px white.
+                Price (India): "₹99" — 36px Bold white + "/month" 16px rgba(255,255,255,0.5).
+                Price (Global): "$1.99/month" same styling.
+                Divider 0.5px.
+                Features list (8px gap, each row: violet checkmark SVG 14px +
+                Inter 13px rgba(255,255,255,0.8)):
+                ✓ Unlimited messages
+                ✓ Email drafting & sending
+                ✓ Document creation
+                ✓ Unlimited web search
+                ✓ All Google integrations
+                ✓ Voice input (Deepgram)
+                ✓ Morning briefing
+
+                FREE TIER comparison box below plan:
+                bg transparent, border 0.5px rgba(255,255,255,0.1), radius 12px,
+                padding 12px 16px. Small "Free" label left + "Pro" right header row.
+                2 rows comparing: "Messages: 50/mo vs Unlimited" and
+                "Documents: No vs Yes". Muted styling.
+
+                BOTTOM CTA:
+                Full-width button 52px: "Start 7-day free trial" #6C47FF,
+                SemiBold 16px white, radius 14px.
+                Below: "Then ₹99/month · Cancel anytime" 12px rgba(255,255,255,0.35).
+                Payment logos row: UPI logo + Visa + Mastercard + Rupay (India)
+                OR Visa + Mastercard + Apple Pay + Google Pay (Global).
+                All grayscale, 20px height.</div>
+            <div class="elements">
+                <div class="el">
+                    <div class="el-k">Header</div>
+                    <div class="el-v">Crown icon + title + limit message</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Plan card</div>
+                    <div class="el-v">Full border violet · price · 7 features with checkmarks</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Free vs Pro</div>
+                    <div class="el-v">Minimal comparison table below plan</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">CTA</div>
+                    <div class="el-v">"Start 7-day free trial" · payment logos row</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">India vs Global</div>
+                    <div class="el-v">Show ₹99 + UPI logos for IN · $1.99 + card logos for others</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 10: SUBSCRIPTION MANAGEMENT -->
+    <div class="screen">
+        <div class="screen-head">
+            <div class="screen-title">Subscription Management</div>
+            <span class="screen-num">SCREEN 10</span>
+        </div>
+        <div class="screen-body">
+            <div class="prompt-box">Light screen #F4F3F7. Reachable from Settings.
+
+                NAV: Back arrow left + "Subscription" center Inter SemiBold 17px.
+
+                CURRENT PLAN CARD (white bg, radius 16px, shadow subtle, padding 20px):
+                Top row: "Zevi Pro" Satoshi Bold 20px #0D0D12 left +
+                "Active" pill (bg #DCFAEE, text #0A6E3F, 11px Mono) right.
+                Price: "₹99 / month" 16px #333.
+                "Renews on 15 April 2025" 13px #888.
+                Thin divider.
+                "Payment method" row: UPI icon + "UPI (rahul@oksbi)" 13px #555.
+
+                USAGE CARD (white, radius 16px, padding 16px, margin-top 12px):
+                Title: "This month's usage" Inter SemiBold 15px #0D0D12.
+                Message count: progress bar full width, rounded 4px,
+                filled portion #6C47FF, remaining #E8E3FF, 4px height.
+                Below bar: "187 / 300 messages" Inter 13px #555.
+                Search count below: same bar in green + "28 / unlimited" label.
+
+                ACTIONS LIST (white card, radius 16px, margin-top 12px):
+                Each row: 48px height, left icon (24px grey) + label 15px #0D0D12 +
+                right chevron grey. Dividers between rows.
+                Rows: "Change plan" / "Billing history" / "Cancel subscription"
+                "Cancel subscription" row: label in #E84545 (red), no chevron,
+                just a right-pointing arrow in red.
+
+                Bottom safe area padding 32px.</div>
+            <div class="elements">
+                <div class="el">
+                    <div class="el-k">Theme</div>
+                    <div class="el-v">Light #F4F3F7 — contrast to dark chat</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Plan card</div>
+                    <div class="el-v">White · plan name + Active pill + renewal date</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Usage bars</div>
+                    <div class="el-v">Violet for messages · green for search</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Actions</div>
+                    <div class="el-v">Change / Billing history / Cancel (red)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sec-divider">SETTINGS & PROFILE — 2 screens</div>
+
+    <!-- SCREEN 11: SETTINGS -->
+    <div class="screen">
+        <div class="screen-head">
+            <div class="screen-title">Settings Screen</div>
+            <span class="screen-num">SCREEN 11</span>
+        </div>
+        <div class="screen-body">
+            <div class="prompt-box">Light screen #F4F3F7.
+
+                NAV: Hamburger or back arrow left + "Settings" center Inter SemiBold 17px.
+
+                PROFILE SECTION (top, white card radius 16px, padding 16px):
+                Left: user avatar 52px circle (Google photo or initials on violet).
+                Right of avatar:
+                Name: Inter SemiBold 16px #0D0D12.
+                Email: Inter 13px #888.
+                Right edge: "Pro" pill bg #E8E3FF, text #6C47FF, 11px Mono.
+                OR "Free" pill bg #F4F3F7, text #888 if free user.
+
+                SETTINGS GROUPS (white cards, radius 16px, margin-top 12px each):
+
+                Group 1 — "Assistant":
+                "Morning briefing" row: label + toggle switch right
+                (on = #6C47FF, off = #ccc).
+                "Briefing time" row: label + "8:00 AM" value right + chevron.
+                "Language" row: label + "English" + chevron.
+
+                Group 2 — "Accounts":
+                "Google accounts" row: label + "2 connected" + chevron.
+                "Linked services" row: label + "Calendar, Gmail, Drive" + chevron.
+
+                Group 3 — "App":
+                "Appearance" row: label + "Dark" + chevron.
+                "Notifications" row: label + toggle.
+                "Privacy policy" row + chevron.
+                "Terms of service" row + chevron.
+
+                Group 4 — "Subscription":
+                "Zevi Pro" row: crown icon left + label + "Active ✓" in green right.
+                Tapping this → Subscription screen.
+
+                LOGOUT at bottom: standalone white card, padding 16px, centered.
+                "Log out" Inter Medium 15px #E84545 (red). No icon.</div>
+            <div class="elements">
+                <div class="el">
+                    <div class="el-k">Theme</div>
+                    <div class="el-v">Light #F4F3F7 — grouped white cards</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Profile</div>
+                    <div class="el-v">Avatar + name + email + plan pill</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Toggles</div>
+                    <div class="el-v">Violet when on · grey when off</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Groups</div>
+                    <div class="el-v">Assistant / Accounts / App / Subscription</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Logout</div>
+                    <div class="el-v">Standalone red text card at bottom</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 12: CONNECTED ACCOUNTS -->
+    <div class="screen">
+        <div class="screen-head">
+            <div class="screen-title">Connected Google Accounts</div>
+            <span class="screen-num">SCREEN 12</span>
+        </div>
+        <div class="screen-body">
+            <div class="prompt-box">Light screen #F4F3F7. Nav: back arrow + "Google accounts".
+
+                Connected accounts section (white card, radius 16px):
+                Each account row:
+                Left: Google 'G' icon 20px in a 36px circle bg #F0EDFF.
+                Center: email address Inter 14px #0D0D12.
+                Right: "Primary" pill (violet bg #E8E3FF, text #6C47FF 10px Mono)
+                for main account. Or a red "Remove" text 12px for secondary.
+                Divider between accounts.
+
+                Permissions per account (expandable, chevron right → down):
+                Small checklist: Calendar ✓ · Gmail ✓ · Contacts ✓ · Drive ✓.
+                Each item: 13px #555 with green checkmark icon 12px.
+
+                "+ Add another Google account" button below card:
+                White bg, border 1.5px dashed #6C47FF, radius 12px,
+                padding 14px, full width minus 32px.
+                Center: "+" icon #6C47FF 18px + "Add account" Inter Medium 14px #6C47FF.</div>
+            <div class="elements">
+                <div class="el">
+                    <div class="el-k">Account rows</div>
+                    <div class="el-v">G icon + email + Primary/Remove label</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Permissions</div>
+                    <div class="el-v">Expandable checklist per account</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Add account</div>
+                    <div class="el-v">Dashed violet border button</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 13: MORNING BRIEFING -->
+    <div class="screen">
+        <div class="screen-head">
+            <div class="screen-title">Morning Briefing (Push Notification tap → Chat)</div>
+            <span class="screen-num">SCREEN 13</span>
+        </div>
+        <div class="screen-body">
+            <div class="prompt-box">This opens into the Chat screen with a special pre-loaded AI message.
+
+                The AI bubble at top of chat shows the morning briefing in a rich format:
+
+                Bubble header: small sun SVG icon #F5A623 16px + "Good morning, Rahul"
+                Inter SemiBold 14px white.
+
+                Inside the bubble, 3 mini-cards stacked (each #0F0E14 bg, radius 8px,
+                padding 8px 10px, margin-top 6px):
+
+                Card 1 (Calendar icon #6C47FF 12px):
+                "3 meetings today" SemiBold 13px white.
+                "10am Standup · 2pm Client call · 4pm Review" 11px rgba(255,255,255,0.5).
+
+                Card 2 (Mail icon #6C47FF 12px):
+                "12 unread emails" SemiBold 13px white.
+                "3 need your reply" 11px rgba(255,255,255,0.5).
+
+                Card 3 (Bell icon #F5A623 12px):
+                "2 reminders today" SemiBold 13px white.
+                "Call Mom 7pm · Take meds 9pm" 11px rgba(255,255,255,0.5).
+
+                Below cards inside bubble:
+                "What would you like to do first?" Inter 13px rgba(255,255,255,0.6).
+
+                3 quick-reply chips below the bubble (not inside it):
+                #1C1B22 bg, 0.5px border, radius 20px, padding 8px 14px.
+                "Open calendar" · "Check emails" · "Start my day"</div>
+            <div class="elements">
+                <div class="el">
+                    <div class="el-k">Trigger</div>
+                    <div class="el-v">Push notification tap → opens chat with briefing</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Briefing card</div>
+                    <div class="el-v">3 mini-cards: Calendar + Email + Reminders</div>
+                </div>
+                <div class="el">
+                    <div class="el-k">Quick replies</div>
+                    <div class="el-v">3 chips below bubble for fast action</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+        style="margin-top:16px;padding:12px 14px;border-radius:var(--border-radius-lg);background:var(--color-background-secondary);font-size:12px;color:var(--color-text-secondary);line-height:1.8;">
+        <span style="font-weight:500;color:var(--color-text-primary);">13 screens total.</span> Copy each "prompt box"
+        text directly into Stitch for that screen. The prompt box is written in Stitch-compatible plain-English visual
+        description format.
+    </div>
+
+</div>
+
+
+<!-- Splash Screen -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;family=Space+Grotesk:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#35343a",
+                        "on-surface": "#e4e1e9",
+                        "on-secondary-container": "#b9b5d0",
+                        "on-background": "#e4e1e9",
+                        "secondary": "#c8c3de",
+                        "on-tertiary": "#2f3033",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "surface-container-high": "#2a292f",
+                        "surface-variant": "#35343a",
+                        "on-tertiary-fixed-variant": "#46474a",
+                        "surface-container-low": "#1b1b20",
+                        "surface-bright": "#39383e",
+                        "background": "#0D0D12",
+                        "tertiary-fixed-dim": "#c6c6ca",
+                        "surface": "#131318",
+                        "primary-container": "#6c47ff",
+                        "tertiary-container": "#6b6c6f",
+                        "on-secondary-fixed": "#1b192d",
+                        "surface-tint": "#c9beff",
+                        "outline-variant": "#484556",
+                        "tertiary": "#c6c6ca",
+                        "primary-fixed-dim": "#c9beff",
+                        "on-tertiary-container": "#efeef2",
+                        "on-primary": "#2f009b",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "primary-fixed": "#e6deff",
+                        "tertiary-fixed": "#e3e2e6",
+                        "secondary-fixed": "#e4dffb",
+                        "on-secondary-fixed-variant": "#47445a",
+                        "inverse-primary": "#5e35f1",
+                        "on-surface-variant": "#c9c3d9",
+                        "outline": "#938ea2",
+                        "on-primary-fixed": "#1b0063",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container": "#1f1f24",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c3de",
+                        "on-secondary": "#302e43",
+                        "secondary-container": "#49475d",
+                        "inverse-on-surface": "#303035",
+                        "on-primary-fixed-variant": "#4500d8",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#f1ebff",
+                        "primary": "#c9beff",
+                        "violet-accent": "#6C47FF"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0D0D12;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .satoshi-bold {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .ambient-glow {
+            width: 300px;
+            height: 300px;
+            background: #6C47FF;
+            filter: blur(120px);
+            opacity: 0.4;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 0;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center">
+    <!-- Linear Process Exception: Splash Screen hides TopAppBar and BottomNavBar to focus the user -->
+    <div class="relative flex flex-col items-center justify-center z-10">
+        <!-- Ambient Light Layer -->
+        <div class="ambient-glow"></div>
+        <!-- Wordmark Section -->
+        <div class="relative z-20 flex flex-col items-center">
+            <h1 class="satoshi-bold text-[42px] leading-tight select-none">
+                <span class="text-white">Ze</span><span class="text-violet-accent">vi</span>
+            </h1>
+            <!-- Tagline -->
+            <div class="mt-[12px]">
+                <p class="font-body text-[14px] text-white/40 tracking-tight">
+                    Your AI. No setup.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Hidden Shared Components (Maintained in DOM but visually hidden for the Linear Splash state) -->
+    <div class="hidden">
+        <div data-component="TopAppBar" data-headline="Zevi" data-leading-icon="arrow_back"
+            data-trailing-icon="account_circle"></div>
+        <div data-active="chat_bubble" data-component="BottomNavBar" data-icons='["chat_bubble", "sunny", "settings"]'>
+        </div>
+        <div data-component="Composer" data-cta="send" data-icons='["attach_file", "mic"]'
+            data-placeholder="Ask Zevi anything..."></div>
+    </div>
+    <!-- Screen Metadata for System Interaction -->
+    <div class="absolute bottom-12 left-0 right-0 flex justify-center">
+        <div class="flex items-center gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></div>
+            <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-white/20">System Initializing</span>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- Onboarding 1 -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@700&amp;family=Space+Grotesk:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#35343a",
+                        "on-surface": "#e4e1e9",
+                        "on-secondary-container": "#b9b5d0",
+                        "on-background": "#e4e1e9",
+                        "secondary": "#c8c3de",
+                        "on-tertiary": "#2f3033",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "surface-container-high": "#2a292f",
+                        "surface-variant": "#35343a",
+                        "on-tertiary-fixed-variant": "#46474a",
+                        "surface-container-low": "#1b1b20",
+                        "surface-bright": "#39383e",
+                        "background": "#0D0D12",
+                        "tertiary-fixed-dim": "#c6c6ca",
+                        "surface": "#131318",
+                        "primary-container": "#6c47ff",
+                        "tertiary-container": "#6b6c6f",
+                        "on-secondary-fixed": "#1b192d",
+                        "surface-tint": "#c9beff",
+                        "outline-variant": "#484556",
+                        "tertiary": "#c6c6ca",
+                        "primary-fixed-dim": "#c9beff",
+                        "on-tertiary-container": "#efeef2",
+                        "on-primary": "#2f009b",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "primary-fixed": "#e6deff",
+                        "tertiary-fixed": "#e3e2e6",
+                        "secondary-fixed": "#e4dffb",
+                        "on-secondary-fixed-variant": "#47445a",
+                        "inverse-primary": "#5e35f1",
+                        "on-surface-variant": "#c9c3d9",
+                        "outline": "#938ea2",
+                        "on-primary-fixed": "#1b0063",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container": "#1f1f24",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c3de",
+                        "on-secondary": "#302e43",
+                        "secondary-container": "#49475d",
+                        "inverse-on-surface": "#303035",
+                        "on-primary-fixed-variant": "#4500d8",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#f1ebff",
+                        "primary": "#6c47ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0D0D12;
+            color: #e4e1e9;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .satoshi-bold {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+        }
+
+        .text-white-35 {
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .text-white-50 {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .border-violet-soft {
+            border: 0.5px solid #6C47FF;
+        }
+
+        .phone-outline {
+            width: 160px;
+            height: 320px;
+            border: 1px solid #6C47FF;
+            border-radius: 24px;
+            position: relative;
+        }
+
+        .floating-card {
+            background-color: #1C1B22;
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            white-space: nowrap;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center">
+    <!-- Header / Skip Action -->
+    <header class="w-full flex justify-end p-6">
+        <button class="font-body text-[13px] text-white-35 hover:text-white transition-colors">Skip</button>
+    </header>
+    <!-- Main Content Area (Abstract Visual) -->
+    <main class="flex-1 w-full flex flex-col items-center justify-center relative">
+        <div class="relative">
+            <!-- Line Art Phone -->
+            <div class="phone-outline flex flex-col items-center p-4">
+                <div class="w-12 h-1 bg-[#6C47FF]/20 rounded-full mt-2 mb-6"></div>
+                <div class="w-full space-y-3">
+                    <div class="h-1 w-3/4 bg-[#6C47FF]/10 rounded"></div>
+                    <div class="h-1 w-1/2 bg-[#6C47FF]/10 rounded"></div>
+                    <div class="h-1 w-5/6 bg-[#6C47FF]/10 rounded"></div>
+                </div>
+            </div>
+            <!-- Floating Action Cards -->
+            <div class="floating-card border-violet-soft absolute -top-8 -left-16 flex items-center gap-2">
+                <span class="material-symbols-outlined text-[14px] text-primary"
+                    style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+                <span>Meeting scheduled</span>
+            </div>
+            <div class="floating-card border-violet-soft absolute top-1/2 -right-20 flex items-center gap-2">
+                <span class="material-symbols-outlined text-[14px] text-primary"
+                    style="font-variation-settings: 'FILL' 1;">mail</span>
+                <span>Email sent</span>
+            </div>
+            <div class="floating-card border-violet-soft absolute bottom-4 -left-12 flex items-center gap-2">
+                <span class="material-symbols-outlined text-[14px] text-primary"
+                    style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+                <span>Reminder set</span>
+            </div>
+        </div>
+    </main>
+    <!-- Content/Onboarding Section (Bottom 40%) -->
+    <section class="w-full px-8 pb-10 flex flex-col items-center text-center">
+        <h1 class="satoshi-bold text-[28px] leading-tight text-white mb-3">
+            Tell it what to do.
+        </h1>
+        <p class="font-body text-[15px] leading-relaxed text-white-50 max-w-[280px] mb-8">
+            Zevi handles your calendar, emails, reminders — all from one chat.
+        </p>
+        <!-- Progress Dots -->
+        <div class="flex items-center gap-2 mb-10">
+            <div class="h-[6px] w-8 bg-primary rounded-full"></div>
+            <div class="h-[6px] w-[6px] bg-white/20 rounded-full"></div>
+            <div class="h-[6px] w-[6px] bg-white/20 rounded-full"></div>
+        </div>
+        <!-- Call to Action -->
+        <div class="w-full space-y-4">
+            <button
+                class="w-full h-[52px] bg-primary rounded-[14px] font-body font-semibold text-[16px] text-white flex items-center justify-center active:scale-[0.98] transition-transform">
+                Get started
+            </button>
+            <p class="font-body text-[12px] text-white-35">
+                Already have an account? <a class="underline hover:text-white transition-colors" href="#">Sign in</a>
+            </p>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<!-- Onboarding 2 -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;family=Space+Grotesk:wght@500&amp;family=JetBrains+Mono:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#35343a",
+                        "on-surface": "#e4e1e9",
+                        "on-secondary-container": "#b9b5d0",
+                        "on-background": "#e4e1e9",
+                        "secondary": "#c8c3de",
+                        "on-tertiary": "#2f3033",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "surface-container-high": "#2a292f",
+                        "surface-variant": "#35343a",
+                        "on-tertiary-fixed-variant": "#46474a",
+                        "surface-container-low": "#1b1b20",
+                        "surface-bright": "#39383e",
+                        "background": "#131318",
+                        "tertiary-fixed-dim": "#c6c6ca",
+                        "surface": "#131318",
+                        "primary-container": "#6c47ff",
+                        "tertiary-container": "#6b6c6f",
+                        "on-secondary-fixed": "#1b192d",
+                        "surface-tint": "#c9beff",
+                        "outline-variant": "#484556",
+                        "tertiary": "#c6c6ca",
+                        "primary-fixed-dim": "#c9beff",
+                        "on-tertiary-container": "#efeef2",
+                        "on-primary": "#2f009b",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "primary-fixed": "#e6deff",
+                        "tertiary-fixed": "#e3e2e6",
+                        "secondary-fixed": "#e4dffb",
+                        "on-secondary-fixed-variant": "#47445a",
+                        "inverse-primary": "#5e35f1",
+                        "on-surface-variant": "#c9c3d9",
+                        "outline": "#938ea2",
+                        "on-primary-fixed": "#1b0063",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container": "#1f1f24",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c3de",
+                        "on-secondary": "#302e43",
+                        "secondary-container": "#49475d",
+                        "inverse-on-surface": "#303035",
+                        "on-primary-fixed-variant": "#4500d8",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#f1ebff",
+                        "primary": "#c9beff",
+                        "brand-violet": "#6C47FF",
+                        "brand-success": "#1DB97C"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #0D0D12;
+            color: #e4e1e9;
+        }
+
+        .architectural-shadow {
+            box-shadow: 0 40px 100px -20px rgba(108, 71, 255, 0.06);
+        }
+
+        .message-glow {
+            box-shadow: 0 0 20px rgba(108, 71, 255, 0.15);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="font-body selection:bg-primary-container selection:text-white overflow-hidden">
+    <div class="relative min-h-screen flex flex-col max-w-md mx-auto overflow-hidden">
+        <!-- Top App Bar (Shared Component) -->
+        <header class="flex items-center justify-between px-6 py-6 z-10">
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-on-surface cursor-pointer"
+                    data-icon="arrow_back">arrow_back</span>
+                <span class="font-headline font-extrabold text-xl tracking-tighter">
+                    <span class="text-white">Ze</span><span class="text-brand-violet">vi</span>
+                </span>
+            </div>
+            <span class="material-symbols-outlined text-on-surface cursor-pointer"
+                data-icon="account_circle">account_circle</span>
+        </header>
+        <!-- Main Content Area -->
+        <main class="flex-1 flex flex-col px-8 pt-12 pb-20 justify-between">
+            <!-- Center Visual: Minimal Chat Mockup -->
+            <div class="relative py-8">
+                <div class="absolute inset-0 bg-brand-violet/5 blur-3xl rounded-full"></div>
+                <div class="relative space-y-6 flex flex-col">
+                    <!-- User Message -->
+                    <div
+                        class="self-end max-w-[85%] bg-brand-violet text-white p-4 rounded-xl rounded-tr-none text-[12px] font-medium leading-relaxed architectural-shadow message-glow">
+                        Schedule lunch with Rahul tomorrow 1pm
+                    </div>
+                    <!-- AI Message Group -->
+                    <div class="self-start max-w-[85%] flex flex-col gap-3">
+                        <div
+                            class="bg-[#1C1B22] border border-brand-violet/20 text-on-secondary-container p-4 rounded-xl rounded-tl-none text-[12px] font-medium leading-relaxed">
+                            Done. Rahul confirmed for tomorrow 1pm. Calendar updated.
+                        </div>
+                        <!-- Status Indicator -->
+                        <div class="flex items-center gap-2 px-1">
+                            <div class="flex items-center justify-center w-4 h-4 rounded-full bg-brand-success/10">
+                                <span class="material-symbols-outlined text-[12px] text-brand-success"
+                                    style="font-variation-settings: 'wght' 700;">check</span>
+                            </div>
+                            <span class="font-mono text-[10px] text-brand-success uppercase tracking-widest">Action
+                                completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Onboarding Text Content -->
+            <div class="space-y-6">
+                <div class="space-y-3">
+                    <h1 class="font-headline font-bold text-3xl text-white leading-tight tracking-tight">
+                        One message.<br />Real actions.
+                    </h1>
+                    <p class="text-on-secondary-container text-sm leading-relaxed max-w-[90%]">
+                        Zevi doesn't just answer. It connects to your calendar, Gmail, maps, and more to actually get
+                        things done.
+                    </p>
+                </div>
+                <!-- Footer Interaction -->
+                <div class="flex items-center justify-between pt-4">
+                    <!-- Progress Dots -->
+                    <div class="flex items-center gap-2">
+                        <div class="h-1.5 w-1.5 rounded-full bg-surface-container-highest"></div>
+                        <div class="h-1.5 w-6 rounded-full bg-brand-violet"></div>
+                        <div class="h-1.5 w-1.5 rounded-full bg-surface-container-highest"></div>
+                    </div>
+                    <!-- CTA Button -->
+                    <button
+                        class="bg-brand-violet text-white px-8 py-3.5 rounded-xl font-bold text-sm tracking-tight flex items-center gap-2 hover:opacity-90 transition-opacity">
+                        Next
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+        <!-- Background Decorative Elements -->
+        <div
+            class="absolute bottom-[-10%] left-[-20%] w-[300px] h-[300px] bg-brand-violet/5 blur-[100px] rounded-full -z-10">
+        </div>
+    </div>
+    <!-- Hidden required elements per protocol -->
+    <div class="hidden">
+        <span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+        <span class="material-symbols-outlined" data-icon="sunny">sunny</span>
+        <span class="material-symbols-outlined" data-icon="settings">settings</span>
+        <span class="material-symbols-outlined" data-icon="attach_file">attach_file</span>
+        <span class="material-symbols-outlined" data-icon="mic">mic</span>
+        <span class="material-symbols-outlined" data-icon="send">send</span>
+    </div>
+</body>
+
+</html>
+
+<!-- Sign In / Onboarding 3 -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;family=Space+Grotesk:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#35343a",
+                        "on-surface": "#e4e1e9",
+                        "on-secondary-container": "#b9b5d0",
+                        "on-background": "#e4e1e9",
+                        "secondary": "#c8c3de",
+                        "on-tertiary": "#2f3033",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "surface-container-high": "#2a292f",
+                        "surface-variant": "#35343a",
+                        "on-tertiary-fixed-variant": "#46474a",
+                        "surface-container-low": "#1b1b20",
+                        "surface-bright": "#39383e",
+                        "background": "#131318",
+                        "tertiary-fixed-dim": "#c6c6ca",
+                        "surface": "#131318",
+                        "primary-container": "#6c47ff",
+                        "tertiary-container": "#6b6c6f",
+                        "on-secondary-fixed": "#1b192d",
+                        "surface-tint": "#c9beff",
+                        "outline-variant": "#484556",
+                        "tertiary": "#c6c6ca",
+                        "primary-fixed-dim": "#c9beff",
+                        "on-tertiary-container": "#efeef2",
+                        "on-primary": "#2f009b",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "primary-fixed": "#e6deff",
+                        "tertiary-fixed": "#e3e2e6",
+                        "secondary-fixed": "#e4dffb",
+                        "on-secondary-fixed-variant": "#47445a",
+                        "inverse-primary": "#5e35f1",
+                        "on-surface-variant": "#c9c3d9",
+                        "outline": "#938ea2",
+                        "on-primary-fixed": "#1b0063",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container": "#1f1f24",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c3de",
+                        "on-secondary": "#302e43",
+                        "secondary-container": "#49475d",
+                        "inverse-on-surface": "#303035",
+                        "on-primary-fixed-variant": "#4500d8",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#f1ebff",
+                        "primary": "#c9beff"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0D0D12;
+            color: #F4F3F7;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .lettermark-glow {
+            text-shadow: 0 0 60px rgba(108, 71, 255, 0.4);
+        }
+
+        .satoshi {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+        }
+
+        .ios-keyboard-mock {
+            background: #1C1B22;
+            height: 200px;
+            width: 100%;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="flex flex-col h-screen max-w-md mx-auto relative border-x border-outline-variant/10 shadow-2xl">
+    <!-- Top Navigation Bar (Shared Component Strategy) -->
+    <nav class="flex items-center justify-between px-6 pt-6 pb-2 z-10">
+        <div class="flex items-center">
+            <span class="material-symbols-outlined text-on-surface-variant text-[24px]"
+                data-icon="arrow_back">arrow_back</span>
+        </div>
+        <div class="text-[18px] satoshi text-white">Zevi</div>
+        <div class="flex items-center">
+            <span class="material-symbols-outlined text-on-surface-variant text-[24px]"
+                data-icon="account_circle">account_circle</span>
+        </div>
+    </nav>
+    <!-- Main Content Canvas -->
+    <main class="flex-1 flex flex-col items-center justify-between px-8 py-4 overflow-y-auto">
+        <!-- Top 50%: Brand Identity -->
+        <div class="flex-1 flex flex-col items-center justify-center space-y-2">
+            <div class="relative">
+                <!-- Large Z Lettermark -->
+                <h1 class="text-[120px] leading-none satoshi text-[#6C47FF] lettermark-glow">Z</h1>
+                <!-- Subtle background ambient light -->
+                <div class="absolute inset-0 bg-[#6C47FF] opacity-10 blur-[80px] rounded-full -z-10"></div>
+            </div>
+            <div class="text-[32px] font-bold tracking-tight text-white satoshi">Zevi</div>
+        </div>
+        <!-- Pagination Indicator (Third dot active) -->
+        <div class="flex gap-2 mb-10">
+            <div class="w-1.5 h-1.5 rounded-full bg-surface-container-highest"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-surface-container-highest"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-[#6C47FF]"></div>
+        </div>
+        <!-- Bottom Section: Onboarding Flow -->
+        <div class="w-full space-y-6 pb-8">
+            <div class="space-y-2">
+                <h2 class="text-[28px] font-bold text-white satoshi leading-tight">Ready in 30 seconds.</h2>
+                <p class="text-[15px] text-on-surface-variant/80 font-body leading-relaxed">
+                    Sign in with Google. No passwords. No setup. Your data stays in your Google account.
+                </p>
+            </div>
+            <!-- Privacy Note Box -->
+            <div class="bg-[#1C1B22] p-3 rounded-xl flex items-start gap-3">
+                <div class="mt-0.5">
+                    <svg fill="none" height="14" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 17C13.1046 17 14 16.1046 14 15C14 13.8954 13.1046 13 12 13C10.8954 13 10 13.8954 10 15C10 16.1046 10.8954 17 12 17Z"
+                            fill="#6C47FF"></path>
+                        <path
+                            d="M18 8H17V6C17 3.24 14.76 1 12 1C9.24 1 7 3.24 7 6V8H6C4.9 8 4 8.9 4 10V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V10C20 8.9 19.1 8 18 8ZM9 6C9 4.34 10.34 3 12 3C13.66 3 15 4.34 15 6V8H9V6Z"
+                            fill="#6C47FF"></path>
+                    </svg>
+                </div>
+                <p class="text-[12px] font-body text-white/50 leading-snug">
+                    Zevi never stores your emails or calendar data. Everything stays in your Google account.
+                </p>
+            </div>
+            <!-- Google Sign-In Button -->
+            <button
+                class="w-full h-[52px] bg-white rounded-[14px] flex items-center justify-center gap-3 active:scale-[0.98] transition-transform">
+                <svg height="20" viewbox="0 0 24 24" width="20">
+                    <path
+                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                        fill="#4285F4"></path>
+                    <path
+                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                        fill="#34A853"></path>
+                    <path
+                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                        fill="#FBBC05"></path>
+                    <path
+                        d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                        fill="#EA4335"></path>
+                </svg>
+                <span class="text-[15px] font-semibold text-[#1A1A1A] font-body">Continue with Google</span>
+            </button>
+            <!-- Legal Footer -->
+            <p class="text-[11px] text-center text-white/30 font-body">
+                By continuing you agree to our Terms &amp; Privacy Policy
+            </p>
+        </div>
+    </main>
+    <!-- Bottom Navigation Bar (Hidden for Focus) -->
+    <!-- Applying Exclusion Protocol: Linear Process screens hide the nav bar -->
+    <!-- iOS Keyboard Mock Area -->
+    <div class="w-full flex flex-col">
+        <div class="h-[2px] w-full bg-surface-container-highest/20"></div>
+        <!-- iOSKeyboard Placeholder from JSON logic -->
+        <div class="ios-keyboard-mock relative overflow-hidden flex flex-col justify-end pb-2">
+            <!-- Home Indicator -->
+            <div class="w-32 h-1.5 bg-white/20 rounded-full mx-auto mb-2"></div>
+            <!-- Structural Noir Layering in keyboard area -->
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#1C1B22]/50 pointer-events-none"></div>
+        </div>
+    </div>
+    <!-- Background Elements for Architectural Depth -->
+    <div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-20 opacity-30">
+        <div class="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-[#6C47FF]/5 blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-[#E8E3FF]/5 blur-[100px]"></div>
+    </div>
+</body>
+
+</html>
+
+<!-- Permissions Screen -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;700&amp;family=Plus+Jakarta+Sans:wght@700&amp;family=JetBrains+Mono:wght@400&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#35343a",
+                        "on-surface": "#e4e1e9",
+                        "on-secondary-container": "#b9b5d0",
+                        "on-background": "#e4e1e9",
+                        "secondary": "#c8c3de",
+                        "on-tertiary": "#2f3033",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "surface-container-high": "#2a292f",
+                        "surface-variant": "#35343a",
+                        "on-tertiary-fixed-variant": "#46474a",
+                        "surface-container-low": "#1b1b20",
+                        "surface-bright": "#39383e",
+                        "background": "#131318",
+                        "tertiary-fixed-dim": "#c6c6ca",
+                        "surface": "#131318",
+                        "primary-container": "#6c47ff",
+                        "tertiary-container": "#6b6c6f",
+                        "on-secondary-fixed": "#1b192d",
+                        "surface-tint": "#c9beff",
+                        "outline-variant": "#484556",
+                        "tertiary": "#c6c6ca",
+                        "primary-fixed-dim": "#c9beff",
+                        "on-tertiary-container": "#efeef2",
+                        "on-primary": "#2f009b",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "primary-fixed": "#e6deff",
+                        "tertiary-fixed": "#e3e2e6",
+                        "secondary-fixed": "#e4dffb",
+                        "on-secondary-fixed-variant": "#47445a",
+                        "inverse-primary": "#5e35f1",
+                        "on-surface-variant": "#c9c3d9",
+                        "outline": "#938ea2",
+                        "on-primary-fixed": "#1b0063",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container": "#1f1f24",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c3de",
+                        "on-secondary": "#302e43",
+                        "secondary-container": "#49475d",
+                        "inverse-on-surface": "#303035",
+                        "on-primary-fixed-variant": "#4500d8",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#f1ebff",
+                        "primary": "#c9beff"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #0D0D12;
+            color: #e4e1e9;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen p-4">
+    <!-- Main Container -->
+    <div class="w-full max-w-md h-[844px] bg-background relative overflow-hidden flex flex-col">
+        <!-- Top App Bar (Shared Component Anchor) -->
+        <header class="pt-4 px-4 pb-2 bg-background flex flex-col gap-4">
+            <div class="flex items-center justify-between h-12">
+                <button class="flex items-center justify-center w-10 h-10">
+                    <span class="material-symbols-outlined text-white" data-icon="arrow_back">arrow_back</span>
+                </button>
+                <h1 class="font-body font-medium text-[16px] text-white">Setup</h1>
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white" data-icon="account_circle">account_circle</span>
+                </div>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full h-[3px] bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full bg-[#6C47FF] w-[60%]"></div>
+            </div>
+        </header>
+        <!-- Main Content (Creative Canvas) -->
+        <main class="flex-1 overflow-y-auto px-6 pt-12">
+            <!-- Headline Area -->
+            <section class="mb-10">
+                <h2 class="font-headline font-bold text-[24px] text-white leading-tight mb-2 tracking-tight">Zevi needs
+                    access to</h2>
+                <p class="font-body text-[14px] text-on-surface-variant/70 leading-relaxed">
+                    These are used only when you ask Zevi to take action.
+                </p>
+            </section>
+            <!-- Permission List -->
+            <div class="flex flex-col gap-3 pb-32">
+                <!-- Google Calendar -->
+                <div
+                    class="bg-surface-container-low p-[14px] px-4 rounded-[12px] flex items-center gap-4 group hover:bg-surface-container-high transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-[#6C47FF]/15 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-[#6C47FF] !text-[20px]"
+                            data-icon="calendar_today">calendar_today</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-body font-semibold text-[14px] text-white">Google Calendar</span>
+                        <span class="font-body text-[12px] text-white/45">Schedule and read your meetings</span>
+                    </div>
+                </div>
+                <!-- Gmail -->
+                <div
+                    class="bg-surface-container-low p-[14px] px-4 rounded-[12px] flex items-center gap-4 group hover:bg-surface-container-high transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-[#6C47FF]/15 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-[#6C47FF] !text-[20px]" data-icon="mail">mail</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-body font-semibold text-[14px] text-white">Gmail</span>
+                        <span class="font-body text-[12px] text-white/45">Read and send emails on your behalf</span>
+                    </div>
+                </div>
+                <!-- Contacts -->
+                <div
+                    class="bg-surface-container-low p-[14px] px-4 rounded-[12px] flex items-center gap-4 group hover:bg-surface-container-high transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-[#6C47FF]/15 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-[#6C47FF] !text-[20px]"
+                            data-icon="person">person</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-body font-semibold text-[14px] text-white">Contacts</span>
+                        <span class="font-body text-[12px] text-white/45">Find who you're talking about</span>
+                    </div>
+                </div>
+                <!-- Google Drive -->
+                <div
+                    class="bg-surface-container-low p-[14px] px-4 rounded-[12px] flex items-center gap-4 group hover:bg-surface-container-high transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-[#6C47FF]/15 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-[#6C47FF] !text-[20px]"
+                            data-icon="description">description</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-body font-semibold text-[14px] text-white flex items-center gap-2">
+                            Google Drive
+                        </span>
+                        <span class="font-body text-[12px] text-white/45">Create and save documents (Pro)</span>
+                    </div>
+                </div>
+                <!-- Location -->
+                <div
+                    class="bg-surface-container-low p-[14px] px-4 rounded-[12px] flex items-center gap-4 group hover:bg-surface-container-high transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-[#6C47FF]/15 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-[#6C47FF] !text-[20px]"
+                            data-icon="location_on">location_on</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-body font-semibold text-[14px] text-white">Location</span>
+                        <span class="font-body text-[12px] text-white/45">Find places near you</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Fixed Bottom Action Bar -->
+        <footer
+            class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background via-background to-transparent pb-10">
+            <button
+                class="w-full h-[52px] bg-[#6C47FF] text-white font-body font-semibold text-[15px] rounded-xl active:scale-[0.98] transition-transform">
+                Allow access &amp; continue
+            </button>
+            <div class="mt-4 flex justify-center">
+                <span class="font-label text-[10px] uppercase tracking-widest text-white/20">Secured with Zevi
+                    Encryption</span>
+            </div>
+        </footer>
+        <!-- Progress Heartbeat (System Decor) -->
+        <div class="absolute top-2 right-4 flex items-center gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+            <span class="font-label text-[9px] text-on-surface-variant/40">READY</span>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- Chat Home -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@700&amp;family=Space+Grotesk:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#35343a",
+                        "on-surface": "#e4e1e9",
+                        "on-secondary-container": "#b9b5d0",
+                        "on-background": "#e4e1e9",
+                        "secondary": "#c8c3de",
+                        "on-tertiary": "#2f3033",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "surface-container-high": "#2a292f",
+                        "surface-variant": "#35343a",
+                        "on-tertiary-fixed-variant": "#46474a",
+                        "surface-container-low": "#1b1b20",
+                        "surface-bright": "#39383e",
+                        "background": "#0D0D12",
+                        "tertiary-fixed-dim": "#c6c6ca",
+                        "surface": "#131318",
+                        "primary-container": "#6c47ff",
+                        "tertiary-container": "#6b6c6f",
+                        "on-secondary-fixed": "#1b192d",
+                        "surface-tint": "#c9beff",
+                        "outline-variant": "#484556",
+                        "tertiary": "#c6c6ca",
+                        "primary-fixed-dim": "#c9beff",
+                        "on-tertiary-container": "#efeef2",
+                        "on-primary": "#2f009b",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "primary-fixed": "#e6deff",
+                        "tertiary-fixed": "#e3e2e6",
+                        "secondary-fixed": "#e4dffb",
+                        "on-secondary-fixed-variant": "#47445a",
+                        "inverse-primary": "#5e35f1",
+                        "on-surface-variant": "#c9c3d9",
+                        "outline": "#938ea2",
+                        "on-primary-fixed": "#1b0063",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container": "#1f1f24",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c3de",
+                        "on-secondary": "#302e43",
+                        "secondary-container": "#49475d",
+                        "inverse-on-surface": "#303035",
+                        "on-primary-fixed-variant": "#4500d8",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#f1ebff",
+                        "primary": "#c9beff",
+                        "violet-accent": "#6C47FF",
+                        "ink": "#0D0D12",
+                        "surface-card": "#1C1B22"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0D0D12;
+            color: #e4e1e9;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .satoshi-bold {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Custom scrollbar for chat area */
+        .chat-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .chat-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background: #2a292f;
+            border-radius: 10px;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-ink flex flex-col h-screen overflow-hidden">
+    <!-- TOP NAV BAR -->
+    <header class="h-[56px] flex items-center justify-between px-6 bg-ink z-50">
+        <div class="flex items-center gap-2">
+            <!-- Branding using Satoshi/Plus Jakarta Bold -->
+            <div class="text-[18px] tracking-tight satoshi-bold">
+                <span class="text-white">Ze</span><span class="text-violet-accent">vi</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <button
+                class="flex items-center justify-center w-8 h-8 text-on-surface-variant hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-[20px]">settings</span>
+            </button>
+            <div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/20">
+                <img alt="User Profile" class="w-full h-full object-cover"
+                    data-alt="Circular minimalist user avatar icon"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx8d7xcIqwX4Zxak0zL5eae-vbLMJtBCB6pacsiajQ0WDRKxNzX56y0pUZkBwR6oiwpuOXilEaxnVAL_1H56HhMI_ujU03gnfUkjQpTv0mMuDUza7r4If1EFSXX9thWn3ZLLt5e4ygOu0TtsyZQfeN2kAs4MKD6fxyoGEX1GSVtIh1LDoKtSsClSXywUrvitbsC40rn2oGkg3p-ahe5frvlAOrcS1J0lIXoh6CuRELCW4zzBNJNdNUMSln4J1cs_QtWHXngOs6jCw" />
+            </div>
+        </div>
+    </header>
+    <!-- MAIN CONTENT / CHAT AREA -->
+    <main class="flex-1 flex flex-col overflow-y-auto chat-scroll relative">
+        <!-- Empty State (Visible by default in this demo) -->
+        <div class="flex-1 flex flex-col items-center justify-center p-8 space-y-8">
+            <div class="text-center space-y-2">
+                <h1 class="satoshi-bold text-[22px] text-white">Good morning, Alex</h1>
+                <p class="font-body text-[15px] text-white/40">What do you need done today?</p>
+            </div>
+            <!-- Suggestion Chips -->
+            <div class="flex flex-wrap justify-center gap-3 max-w-md">
+                <button
+                    class="px-5 py-2.5 bg-surface-container-low hover:bg-surface-container-high text-on-surface text-[13px] font-medium rounded-xl transition-all border border-outline-variant/10">
+                    Schedule something
+                </button>
+                <button
+                    class="px-5 py-2.5 bg-surface-container-low hover:bg-surface-container-high text-on-surface text-[13px] font-medium rounded-xl transition-all border border-outline-variant/10">
+                    Draft an email
+                </button>
+                <button
+                    class="px-5 py-2.5 bg-surface-container-low hover:bg-surface-container-high text-on-surface text-[13px] font-medium rounded-xl transition-all border border-outline-variant/10">
+                    Remind me
+                </button>
+            </div>
+        </div>
+        <!-- Chat Transcript (Positioned for Demo) -->
+        <div class="max-w-3xl w-full mx-auto px-6 pb-32 space-y-6">
+            <!-- User Bubble -->
+            <div class="flex justify-end">
+                <div
+                    class="bg-violet-accent text-white px-5 py-3 rounded-[18px] rounded-br-[4px] max-w-[85%] shadow-lg shadow-violet-accent/10">
+                    <p class="text-[14px] leading-relaxed">Can you summarize my meetings for this afternoon?</p>
+                </div>
+            </div>
+            <!-- AI Bubble -->
+            <div class="flex justify-start">
+                <div
+                    class="bg-surface-card border-[0.5px] border-violet-accent/30 text-[#E8E3FF] px-5 py-3 rounded-[18px] rounded-bl-[4px] max-w-[85%]">
+                    <div class="flex flex-col gap-2">
+                        <p class="text-[14px] leading-relaxed">Of course. You have two scheduled syncs: the Q4 Strategy
+                            Review at 2:00 PM and the Design Sync at 4:30 PM. Would you like me to pull the brief for
+                            the Strategy Review?</p>
+                        <div class="flex items-center gap-2 mt-1">
+                            <div class="w-2 h-2 rounded-full bg-primary/40"></div>
+                            <span class="font-mono text-[10px] tracking-wider text-primary/60 uppercase">System
+                                Ready</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- COMPOSER / INPUT BAR (Fixed Bottom) -->
+    <div class="fixed bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-ink via-ink/95 to-transparent">
+        <div class="max-w-3xl mx-auto">
+            <div
+                class="relative flex items-center bg-surface-container-lowest rounded-2xl border border-outline-variant/10 p-2 shadow-2xl">
+                <!-- Mic Button with Pulse -->
+                <button
+                    class="relative group flex items-center justify-center w-10 h-10 ml-1 rounded-xl bg-surface-container-high text-violet-accent hover:bg-violet-accent hover:text-white transition-all">
+                    <!-- Outer Pulse Circle -->
+                    <span class="absolute inset-0 rounded-xl bg-violet-accent/20 animate-ping opacity-75"></span>
+                    <span class="material-symbols-outlined z-10 text-[20px]">mic</span>
+                </button>
+                <!-- Input Field -->
+                <input
+                    class="flex-1 bg-transparent border-none focus:ring-0 text-white placeholder-white/30 px-4 text-[15px] font-body"
+                    placeholder="Ask Zevi anything..." type="text" />
+                <!-- Action Icons -->
+                <div class="flex items-center gap-1 pr-1">
+                    <button
+                        class="flex items-center justify-center w-10 h-10 text-on-surface-variant hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">attach_file</span>
+                    </button>
+                    <!-- CTA Send -->
+                    <button
+                        class="flex items-center justify-center w-10 h-10 bg-violet-accent text-white rounded-xl shadow-lg shadow-violet-accent/20 active:scale-95 transition-transform">
+                        <span class="material-symbols-outlined text-[20px]"
+                            style="font-variation-settings: 'FILL' 1;">send</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Context Hint -->
+            <div class="mt-3 flex justify-center">
+                <div class="flex items-center gap-2 px-3 py-1 bg-surface-container-low/50 rounded-full">
+                    <span class="material-symbols-outlined text-[14px] text-primary">auto_awesome</span>
+                    <span class="font-mono text-[10px] text-on-surface-variant/70 tracking-tight">AI Assistant is active
+                        and ready</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Navigation (Shared Component from JSON) -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 hidden md:hidden flex items-center justify-around h-16 bg-surface-container-low border-t border-outline-variant/10">
+        <button class="flex flex-col items-center gap-1 text-violet-accent">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined">sunny</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
+    </nav>
+</body>
+
+</html>
+
+<!-- Disambiguation State -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#35343a",
+                        "on-surface": "#e4e1e9",
+                        "on-secondary-container": "#b9b5d0",
+                        "on-background": "#e4e1e9",
+                        "secondary": "#c8c3de",
+                        "on-tertiary": "#2f3033",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "surface-container-high": "#2a292f",
+                        "surface-variant": "#35343a",
+                        "on-tertiary-fixed-variant": "#46474a",
+                        "surface-container-low": "#1b1b20",
+                        "surface-bright": "#39383e",
+                        "background": "#131318",
+                        "tertiary-fixed-dim": "#c6c6ca",
+                        "surface": "#131318",
+                        "primary-container": "#6c47ff",
+                        "tertiary-container": "#6b6c6f",
+                        "on-secondary-fixed": "#1b192d",
+                        "surface-tint": "#c9beff",
+                        "outline-variant": "#484556",
+                        "tertiary": "#c6c6ca",
+                        "primary-fixed-dim": "#c9beff",
+                        "on-tertiary-container": "#efeef2",
+                        "on-primary": "#2f009b",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "primary-fixed": "#e6deff",
+                        "tertiary-fixed": "#e3e2e6",
+                        "secondary-fixed": "#e4dffb",
+                        "on-secondary-fixed-variant": "#47445a",
+                        "inverse-primary": "#5e35f1",
+                        "on-surface-variant": "#c9c3d9",
+                        "outline": "#938ea2",
+                        "on-primary-fixed": "#1b0063",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container": "#1f1f24",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c3de",
+                        "on-secondary": "#302e43",
+                        "secondary-container": "#49475d",
+                        "inverse-on-surface": "#303035",
+                        "on-primary-fixed-variant": "#4500d8",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#f1ebff",
+                        "primary": "#c9beff"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #0D0D12;
+            color: #E4E1E9;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="flex flex-col h-screen overflow-hidden">
+    <!-- TopAppBar -->
+    <header class="h-16 flex items-center justify-between px-6 bg-surface-dim z-50">
+        <div class="flex items-center gap-4">
+            <button
+                class="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-surface-container-high transition-colors">
+                <span class="material-symbols-outlined text-on-surface" data-icon="arrow_back">arrow_back</span>
+            </button>
+            <h1 class="font-headline text-xl tracking-tight">
+                <span class="text-white">Ze</span><span class="text-primary-container">vi</span>
+            </h1>
+        </div>
+        <div class="flex items-center">
+            <button
+                class="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-surface-container-high transition-colors">
+                <span class="material-symbols-outlined text-on-surface" data-icon="account_circle">account_circle</span>
+            </button>
+        </div>
+    </header>
+    <!-- Chat Canvas -->
+    <main class="flex-1 overflow-y-auto px-6 py-8 space-y-12">
+        <!-- User Message -->
+        <div class="flex justify-end w-full">
+            <div
+                class="max-w-[80%] bg-surface-container-highest px-5 py-4 rounded-[18px] text-on-surface text-sm font-body shadow-lg">
+                Send the draft to Rahul.
+            </div>
+        </div>
+        <!-- AI Agent Response -->
+        <div class="relative pl-8 max-w-2xl">
+            <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-primary-container"></div>
+            <div class="space-y-6">
+                <div class="text-on-surface text-base font-body leading-relaxed">
+                    Found 3 contacts named Rahul. Which one?
+                </div>
+                <!-- Contact Picker (The Innovation Zone) -->
+                <div class="space-y-3">
+                    <!-- Selected Card -->
+                    <div
+                        class="flex items-center justify-between p-4 rounded-[10px] bg-[rgba(108,71,255,0.15)] border-[1.5px] border-primary-container shadow-[0_8px_32px_rgba(108,71,255,0.1)] cursor-pointer">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white font-headline text-sm"
+                                data-alt="Abstract gradient avatar">
+                                RS
+                            </div>
+                            <div>
+                                <div class="text-white font-medium text-sm">Rahul Sharma</div>
+                                <div class="text-on-secondary-container text-xs font-mono">rahul.sharma@enterprise.com
+                                </div>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-primary-container" data-icon="check_circle"
+                            style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    </div>
+                    <!-- Unselected Card 1 -->
+                    <div
+                        class="flex items-center justify-between p-4 rounded-[10px] bg-[#1C1B22] border-[0.5px] border-outline-variant hover:border-primary-container/40 transition-all cursor-pointer">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant font-headline text-sm"
+                                data-alt="Abstract dark pattern avatar">
+                                RV
+                            </div>
+                            <div>
+                                <div class="text-on-surface-variant font-medium text-sm">Rahul Verma</div>
+                                <div class="text-on-secondary-fixed-variant text-xs font-mono">verma.rahul@gmail.com
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Unselected Card 2 -->
+                    <div
+                        class="flex items-center justify-between p-4 rounded-[10px] bg-[#1C1B22] border-[0.5px] border-outline-variant hover:border-primary-container/40 transition-all cursor-pointer">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant font-headline text-sm"
+                                data-alt="Abstract subtle texture avatar">
+                                RK
+                            </div>
+                            <div>
+                                <div class="text-on-surface-variant font-medium text-sm">Rahul Kapoor</div>
+                                <div class="text-on-secondary-fixed-variant text-xs font-mono">rahul.k@design-studio.io
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Link Action -->
+                    <div class="pt-2">
+                        <button
+                            class="flex items-center gap-2 text-primary text-xs font-mono hover:underline uppercase tracking-widest group">
+                            See all contacts
+                            <span
+                                class="material-symbols-outlined text-xs group-hover:translate-x-1 transition-transform"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- AI Status Indicator -->
+                <div class="flex items-center gap-3 pt-4">
+                    <div class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_#C9BEFF]"></div>
+                    <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-[0.2em]">Awaiting
+                        Selection</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- iOS Keyboard Spacer -->
+    <div class="h-0 md:h-2"></div>
+    <!-- Composer Section -->
+    <div class="px-6 pb-6 bg-surface-dim/80 backdrop-blur-xl">
+        <div class="max-w-4xl mx-auto">
+            <div
+                class="relative flex items-end gap-3 bg-surface-container-lowest p-3 rounded-2xl border border-outline-variant/10 focus-within:border-primary-container/30 transition-all">
+                <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined" data-icon="attach_file">attach_file</span>
+                </button>
+                <textarea
+                    class="flex-1 bg-transparent border-none focus:ring-0 text-white font-body py-2 resize-none placeholder:text-on-secondary-fixed-variant"
+                    placeholder="Ask Zevi anything..." rows="1"></textarea>
+                <div class="flex items-center gap-1">
+                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined" data-icon="mic">mic</span>
+                    </button>
+                    <button
+                        class="bg-primary-container p-2.5 rounded-xl text-white shadow-lg hover:scale-105 transition-transform">
+                        <span class="material-symbols-outlined" data-icon="send"
+                            style="font-variation-settings: 'FILL' 1;">send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BottomNavBar -->
+    <nav class="h-16 flex items-center justify-around bg-surface-dim border-t border-outline-variant/5">
+        <button
+            class="flex flex-col items-center justify-center w-12 h-12 rounded-xl text-primary-container transition-all">
+            <span class="material-symbols-outlined" data-icon="chat_bubble"
+                style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center w-12 h-12 rounded-xl text-on-surface-variant hover:text-white transition-all">
+            <span class="material-symbols-outlined" data-icon="sunny">sunny</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center w-12 h-12 rounded-xl text-on-surface-variant hover:text-white transition-all">
+            <span class="material-symbols-outlined" data-icon="settings">settings</span>
+        </button>
+    </nav>
+</body>
+
+</html>
+
+<!-- Email Preview -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@700&amp;family=Space+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#35343a",
+                        "on-surface": "#e4e1e9",
+                        "on-secondary-container": "#b9b5d0",
+                        "on-background": "#e4e1e9",
+                        "secondary": "#c8c3de",
+                        "on-tertiary": "#2f3033",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "surface-container-high": "#2a292f",
+                        "surface-variant": "#35343a",
+                        "on-tertiary-fixed-variant": "#46474a",
+                        "surface-container-low": "#1b1b20",
+                        "surface-bright": "#39383e",
+                        "background": "#131318",
+                        "tertiary-fixed-dim": "#c6c6ca",
+                        "surface": "#131318",
+                        "primary-container": "#6c47ff",
+                        "tertiary-container": "#6b6c6f",
+                        "on-secondary-fixed": "#1b192d",
+                        "surface-tint": "#c9beff",
+                        "outline-variant": "#484556",
+                        "tertiary": "#c6c6ca",
+                        "primary-fixed-dim": "#c9beff",
+                        "on-tertiary-container": "#efeef2",
+                        "on-primary": "#2f009b",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "primary-fixed": "#e6deff",
+                        "tertiary-fixed": "#e3e2e6",
+                        "secondary-fixed": "#e4dffb",
+                        "on-secondary-fixed-variant": "#47445a",
+                        "inverse-primary": "#5e35f1",
+                        "on-surface-variant": "#c9c3d9",
+                        "outline": "#938ea2",
+                        "on-primary-fixed": "#1b0063",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container": "#1f1f24",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c3de",
+                        "on-secondary": "#302e43",
+                        "secondary-container": "#49475d",
+                        "inverse-on-surface": "#303035",
+                        "on-primary-fixed-variant": "#4500d8",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#f1ebff",
+                        "primary": "#c9beff"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0d0d12;
+            color: #e4e1e9;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .ai-border-accent {
+            border-left: 3px solid #6c47ff;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            background: rgba(19, 19, 24, 0.8);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+    <!-- TopAppBar -->
+    <header class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/10">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <button
+                    class="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-surface-container-high transition-colors">
+                    <span class="material-symbols-outlined text-on-surface">arrow_back</span>
+                </button>
+                <h1 class="font-headline text-xl tracking-tight">
+                    <span class="text-white">Ze</span><span class="text-[#6C47FF]">vi</span>
+                </h1>
+            </div>
+            <div class="flex items-center gap-2">
+                <span
+                    class="font-mono text-[10px] text-primary/60 px-2 py-1 rounded bg-primary/5 border border-primary/10">PRO_ACTIVE</span>
+                <button
+                    class="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-surface-container-high transition-colors">
+                    <span class="material-symbols-outlined text-on-surface">account_circle</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="flex-grow pt-24 pb-48 max-w-4xl mx-auto w-full px-6">
+        <!-- Previous User Context (Small Placeholder) -->
+        <div class="flex justify-end mb-12">
+            <div class="bg-surface-container-highest rounded-[18px] px-6 py-4 max-w-[80%]">
+                <p class="text-sm leading-relaxed font-body text-on-surface">Draft a formal email to Sarah regarding the
+                    architectural review meeting scheduled for next Tuesday. Keep it professional but warm.</p>
+            </div>
+        </div>
+        <!-- AI Agent Response -->
+        <div class="relative pl-8 mb-12 ai-border-accent">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(201,190,255,0.6)]"></div>
+                <span class="font-mono text-[11px] tracking-widest text-secondary/60 uppercase">Zevi Assistant</span>
+            </div>
+            <p class="text-lg font-body text-on-surface mb-8 leading-relaxed">Here's your email draft — send it?</p>
+            <!-- Email Preview Card -->
+            <div class="bg-[#0F0E14] rounded-[12px] border border-outline-variant/15 p-[14px] shadow-2xl mb-6">
+                <!-- Row 1: To -->
+                <div class="flex items-start gap-3 mb-3 pb-3 border-b border-outline-variant/5">
+                    <span class="font-mono text-[11px] text-secondary/40 w-12 pt-1">To:</span>
+                    <div class="flex flex-col">
+                        <span class="text-sm font-medium text-on-surface">Sarah Mitchell</span>
+                        <span class="text-[12px] text-secondary/40 font-mono">sarah.m@architecture-studio.com</span>
+                    </div>
+                </div>
+                <!-- Row 2: Subject -->
+                <div class="flex items-start gap-3 mb-5">
+                    <span class="font-mono text-[11px] text-secondary/40 w-12 pt-1">Subj:</span>
+                    <span class="text-sm font-semibold text-on-surface">Architectural Review Meeting - Tuesday
+                        Schedule</span>
+                </div>
+                <!-- Email Body -->
+                <div class="bg-surface-container-low/30 rounded-lg p-5">
+                    <p class="text-sm font-body text-on-surface/90 leading-relaxed space-y-4">
+                        Dear Sarah,<br /><br />
+                        I hope this note finds you well.<br /><br />
+                        Following up on our recent communication, I would like to confirm our architectural review
+                        meeting scheduled for next Tuesday. I've prepared the preliminary structural blueprints and look
+                        forward to discussing the site integration strategies with you.<br /><br />
+                        Please let me know if there are any specific agenda items you'd like to prioritize during our
+                        session.<br /><br />
+                        Best regards,<br />
+                        Alex
+                    </p>
+                </div>
+            </div>
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-4">
+                <button
+                    class="flex items-center justify-center px-6 py-3 rounded-xl bg-transparent text-secondary border border-outline-variant/20 hover:bg-surface-container-high transition-all font-mono text-sm tracking-tighter">
+                    <span class="material-symbols-outlined mr-2 text-[18px]">edit</span>
+                    Edit
+                </button>
+                <button
+                    class="flex-grow md:flex-none md:min-w-[140px] flex items-center justify-center px-8 py-3 rounded-xl bg-[#6C47FF] text-white hover:brightness-110 transition-all font-semibold text-sm shadow-lg shadow-primary-container/20">
+                    <span class="material-symbols-outlined mr-2 text-[18px]">send</span>
+                    Send
+                </button>
+            </div>
+        </div>
+    </main>
+    <!-- Composer & Bottom Area -->
+    <section class="fixed bottom-0 w-full glass-nav pt-4 pb-8 border-t border-outline-variant/10">
+        <div class="max-w-4xl mx-auto px-6 flex flex-col gap-6">
+            <!-- Composer -->
+            <div
+                class="flex items-end gap-4 bg-surface-container-lowest border border-outline-variant/10 rounded-2xl p-2 pl-4">
+                <div class="flex-grow pb-2">
+                    <textarea
+                        class="w-full bg-transparent border-none focus:ring-0 text-on-surface font-body text-base resize-none placeholder-secondary/30"
+                        placeholder="Ask Zevi anything..." rows="1"></textarea>
+                </div>
+                <div class="flex items-center gap-1 pb-1 pr-1">
+                    <button
+                        class="w-10 h-10 flex items-center justify-center text-secondary/60 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">attach_file</span>
+                    </button>
+                    <button
+                        class="w-10 h-10 flex items-center justify-center text-secondary/60 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">mic</span>
+                    </button>
+                    <button
+                        class="w-12 h-12 flex items-center justify-center bg-primary-container text-white rounded-xl shadow-lg">
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
+                </div>
+            </div>
+            <!-- BottomNavBar -->
+            <nav class="flex justify-center items-center gap-12">
+                <button class="flex flex-col items-center gap-1 text-primary">
+                    <span class="material-symbols-outlined"
+                        style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+                    <span class="w-1 h-1 rounded-full bg-primary mt-1"></span>
+                </button>
+                <button
+                    class="flex flex-col items-center gap-1 text-secondary/40 hover:text-secondary transition-colors">
+                    <span class="material-symbols-outlined">sunny</span>
+                </button>
+                <button
+                    class="flex flex-col items-center gap-1 text-secondary/40 hover:text-secondary transition-colors">
+                    <span class="material-symbols-outlined">settings</span>
+                </button>
+            </nav>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<!-- Upgrade / Paywall -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;family=Space+Grotesk:wght@500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#35343a",
+                        "on-surface": "#e4e1e9",
+                        "on-secondary-container": "#b9b5d0",
+                        "on-background": "#e4e1e9",
+                        "secondary": "#c8c3de",
+                        "on-tertiary": "#2f3033",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "surface-container-high": "#2a292f",
+                        "surface-variant": "#35343a",
+                        "on-tertiary-fixed-variant": "#46474a",
+                        "surface-container-low": "#1b1b20",
+                        "surface-bright": "#39383e",
+                        "background": "#131318",
+                        "tertiary-fixed-dim": "#c6c6ca",
+                        "surface": "#131318",
+                        "primary-container": "#6c47ff",
+                        "tertiary-container": "#6b6c6f",
+                        "on-secondary-fixed": "#1b192d",
+                        "surface-tint": "#c9beff",
+                        "outline-variant": "#484556",
+                        "tertiary": "#c6c6ca",
+                        "primary-fixed-dim": "#c9beff",
+                        "on-tertiary-container": "#efeef2",
+                        "on-primary": "#2f009b",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "primary-fixed": "#e6deff",
+                        "tertiary-fixed": "#e3e2e6",
+                        "secondary-fixed": "#e4dffb",
+                        "on-secondary-fixed-variant": "#47445a",
+                        "inverse-primary": "#5e35f1",
+                        "on-surface-variant": "#c9c3d9",
+                        "outline": "#938ea2",
+                        "on-primary-fixed": "#1b0063",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container": "#1f1f24",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c3de",
+                        "on-secondary": "#302e43",
+                        "secondary-container": "#49475d",
+                        "inverse-on-surface": "#303035",
+                        "on-primary-fixed-variant": "#4500d8",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#f1ebff",
+                        "primary": "#c9beff"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0D0D12;
+            color: #F4F3F7;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .satoshi {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .pro-border {
+            border: 1.5px solid #6C47FF;
+        }
+
+        .glass-overlay {
+            background: rgba(13, 13, 18, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-start p-6">
+    <!-- Top Navigation / Dismiss -->
+    <nav class="w-full flex justify-end mb-8">
+        <button class="p-2 hover:bg-surface-container-high rounded-full transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant">close</span>
+        </button>
+    </nav>
+    <!-- Header Section -->
+    <header class="text-center mb-10 max-w-md">
+        <div
+            class="inline-flex items-center justify-center w-14 h-14 bg-surface-container-low rounded-xl mb-6 shadow-[0_0_30px_rgba(108,71,255,0.2)]">
+            <span class="material-symbols-outlined text-[#6C47FF] text-3xl"
+                style="font-variation-settings: 'FILL' 1;">crown</span>
+        </div>
+        <h1 class="satoshi text-3xl font-extrabold text-white mb-3">Upgrade to Zevi Pro</h1>
+        <p class="font-mono text-[0.6875rem] text-on-surface-variant tracking-wider uppercase">
+            You've used all 50 free messages this month.
+        </p>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="w-full max-w-lg space-y-6">
+        <!-- PRO PLAN CARD -->
+        <section class="pro-border bg-[#1C1B22] rounded-[16px] p-6 relative overflow-hidden shadow-2xl">
+            <!-- Popular Badge -->
+            <div class="absolute top-0 right-0">
+                <div
+                    class="bg-primary-container text-white font-mono text-[10px] px-4 py-1 rounded-bl-lg uppercase tracking-widest font-bold">
+                    Most Popular
+                </div>
+            </div>
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="satoshi text-2xl font-bold text-white mb-1">Pro</h2>
+                    <p class="text-on-surface-variant text-sm">For the power users</p>
+                </div>
+                <div class="text-right">
+                    <span class="satoshi text-3xl font-bold text-white">₹99</span>
+                    <span class="text-on-surface-variant font-mono text-xs">/ month</span>
+                </div>
+            </div>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-[#6C47FF] text-lg"
+                        style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="text-on-surface text-sm">Unlimited high-speed messages</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-[#6C47FF] text-lg"
+                        style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="text-on-surface text-sm">Access to Zevi-4 Architectural Model</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-[#6C47FF] text-lg"
+                        style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="text-on-surface text-sm">Priority server access</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-[#6C47FF] text-lg"
+                        style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="text-on-surface text-sm">Advanced code &amp; data analysis</span>
+                </li>
+            </ul>
+            <button
+                class="w-full bg-[#6C47FF] hover:bg-[#5a3ae6] text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-primary-container/20">
+                Start 7-day free trial
+            </button>
+        </section>
+        <!-- COMPARISON BOX (FREE TIER) -->
+        <section class="bg-surface-container-low rounded-xl p-5">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-mono text-[0.6875rem] text-on-surface-variant uppercase tracking-widest">Currently on
+                    Free Tier</h3>
+                <span
+                    class="px-2 py-0.5 bg-surface-container-high rounded text-[10px] font-mono text-secondary">ACTIVE</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-2">
+                    <div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+                        <div class="h-full bg-error w-full"></div>
+                    </div>
+                    <p class="text-[11px] text-on-surface-variant">50 / 50 Messages used</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="text-[11px] text-on-surface-variant">Standard Model only</p>
+                    <p class="text-[11px] text-on-surface-variant">Standard response speed</p>
+                </div>
+            </div>
+        </section>
+        <!-- PAYMENT LOGOS & FOOTER -->
+        <footer class="pt-6 space-y-6 flex flex-col items-center">
+            <div class="flex items-center justify-center gap-8 opacity-40 grayscale contrast-125">
+                <img alt="Visa logo" class="h-4 object-contain" data-alt="Visa payment processor logo in grayscale"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWBwoxwWhiFbD18UHc0s-bCM9ONmO_Fb7p05I28HHh5E711QvAjLIa3XbqsGC8YiSHvr2k9pKBlS385CQodWnS007IKu1Ad2I20UjWBAQGOus4WyJhO3ytLBZc5bOYc_1t2Viey9_gq745OL3fklL-mN0bbSLxlCIUzcClW6TmjXCjstsnTpm9_jne2hxEQZauFtLV5EbDwvPgVdCg8A6b6vKYXN6bVLemeklqS2uSbn2f4MpFyViqTPaEadcDSb-iZHcTvsrm-to" />
+                <img alt="Mastercard logo" class="h-6 object-contain"
+                    data-alt="Mastercard payment processor logo in grayscale"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEegtrJo9DxFZLeCdOF9oOEtsqKtTihjfgkuM1wMnAioVFtug-6_8vs1ABjgRYWUoy3BJW8Q6PFbiqsKqPHPkv9je2vCcsgWYSb9YniT46i9FPhdQIqMYHlZH_tiC8JKALiGLtoD-iId5Ia_jB3x5T6lroPusubBf5jceMNfNgZX7xgzmm6uPxXO92iBBlE7biCkMe-XivrNs-JZ5wZrQ9Mm4ADlrJJA16rkX4dTDJgklF6DIyHAtxrHm3m8iepmEZehWVvaPjoHA" />
+                <img alt="PayPal logo" class="h-5 object-contain" data-alt="Paypal payment processor logo in grayscale"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVc3jPvvpTPQmWmquizOPJei0MCeKkTSy_yt2kUrGupBy09uvXlljWgCrNucqaFpEBNss8IPfbZxH9h4gO0kRozRBvHkMpS9pjjkfLzEWUSJK2mF1pMwzrDXyq5gw-6gd7jbNrVvCHuxLC_Kb_ykYQngytdcHAi3AsIjwtARmBocV7JGEp13p5WAs2mDQaP30b8vZ5YPOurEktDTxHeaxwqzpesp9Qp3wGCtTI417OQ5OWpBDU_TsGC_4WSvR9ILOzGe35UzSoRAA" />
+            </div>
+            <p class="text-[10px] text-on-surface-variant/60 text-center max-w-xs leading-relaxed">
+                By starting your trial, you agree to Zevi's Terms of Service.
+                Auto-renews at ₹99/mo after 7 days unless cancelled.
+            </p>
+        </footer>
+    </main>
+    <!-- UI ELEMENT: Shared Component Floating Elements logic -->
+    <div
+        class="fixed bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#6C47FF] to-transparent opacity-20">
+    </div>
+</body>
+
+</html>
+
+<!-- Subscription Management -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;family=Space+Grotesk:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#35343a",
+                        "on-surface": "#e4e1e9",
+                        "on-secondary-container": "#b9b5d0",
+                        "on-background": "#e4e1e9",
+                        "secondary": "#c8c3de",
+                        "on-tertiary": "#2f3033",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "surface-container-high": "#2a292f",
+                        "surface-variant": "#35343a",
+                        "on-tertiary-fixed-variant": "#46474a",
+                        "surface-container-low": "#1b1b20",
+                        "surface-bright": "#39383e",
+                        "background": "#131318",
+                        "tertiary-fixed-dim": "#c6c6ca",
+                        "surface": "#131318",
+                        "primary-container": "#6c47ff",
+                        "tertiary-container": "#6b6c6f",
+                        "on-secondary-fixed": "#1b192d",
+                        "surface-tint": "#c9beff",
+                        "outline-variant": "#484556",
+                        "tertiary": "#c6c6ca",
+                        "primary-fixed-dim": "#c9beff",
+                        "on-tertiary-container": "#efeef2",
+                        "on-primary": "#2f009b",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "primary-fixed": "#e6deff",
+                        "tertiary-fixed": "#e3e2e6",
+                        "secondary-fixed": "#e4dffb",
+                        "on-secondary-fixed-variant": "#47445a",
+                        "inverse-primary": "#5e35f1",
+                        "on-surface-variant": "#c9c3d9",
+                        "outline": "#938ea2",
+                        "on-primary-fixed": "#1b0063",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container": "#1f1f24",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c3de",
+                        "on-secondary": "#302e43",
+                        "secondary-container": "#49475d",
+                        "inverse-on-surface": "#303035",
+                        "on-primary-fixed-variant": "#4500d8",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#f1ebff",
+                        "primary": "#c9beff",
+                        "ash": "#F4F3F7"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F4F3F7;
+            color: #131318;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .pro-card-shadow {
+            box-shadow: 0 20px 40px -15px rgba(108, 71, 255, 0.1);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-ash/80 backdrop-blur-md px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <button
+                class="w-10 h-10 flex items-center justify-center rounded-xl bg-white shadow-sm border border-black/5 hover:bg-white/50 transition-colors">
+                <span class="material-symbols-outlined text-[20px] text-surface-container-highest">arrow_back</span>
+            </button>
+        </div>
+        <h1 class="font-headline font-bold text-lg tracking-tight">Subscription</h1>
+        <div class="w-10"></div> <!-- Placeholder for symmetry -->
+    </header>
+    <main class="max-w-md mx-auto px-6 pt-8 pb-32 space-y-8">
+        <!-- CURRENT PLAN CARD -->
+        <section class="relative">
+            <div class="bg-white rounded-[24px] p-8 pro-card-shadow border border-black/[0.03]">
+                <div class="flex justify-between items-start mb-10">
+                    <div>
+                        <h2 class="font-headline text-[24px] font-extrabold text-surface-dim tracking-tight">Zevi Pro
+                        </h2>
+                        <div
+                            class="mt-2 inline-flex items-center px-3 py-1 rounded-full bg-emerald-100/50 text-emerald-700 text-[11px] font-bold tracking-widest uppercase">
+                            Active
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary-container text-[24px]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center py-4 border-b border-black/[0.03]">
+                        <span
+                            class="font-label text-xs uppercase tracking-widest text-surface-container-highest/60 font-medium">Renews
+                            on</span>
+                        <span class="font-body text-sm font-semibold text-surface-dim">October 24, 2024</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span
+                            class="font-label text-xs uppercase tracking-widest text-surface-container-highest/60 font-medium">Payment
+                            method</span>
+                        <div class="flex items-center gap-2">
+                            <span class="font-body text-sm font-semibold text-surface-dim">UPI</span>
+                            <div class="w-6 h-4 bg-ash rounded-sm border border-black/5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- USAGE CARD -->
+        <section class="space-y-4">
+            <h3
+                class="font-label text-[11px] uppercase tracking-[0.2em] font-bold text-surface-container-highest/40 px-1">
+                Usage Metrics</h3>
+            <div class="bg-surface-dim rounded-[24px] p-8 space-y-8">
+                <!-- Message Count -->
+                <div class="space-y-3">
+                    <div class="flex justify-between items-end">
+                        <span class="font-headline text-white/90 text-sm font-semibold">Message count</span>
+                        <span class="font-label text-[10px] text-white/40 tracking-wider">1,402 / 2,000</span>
+                    </div>
+                    <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                        <div class="h-full bg-primary-container rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+                <!-- Search Count -->
+                <div class="space-y-3">
+                    <div class="flex justify-between items-end">
+                        <span class="font-headline text-white/90 text-sm font-semibold">Search count</span>
+                        <span class="font-label text-[10px] text-white/40 tracking-wider">45 / 100</span>
+                    </div>
+                    <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                        <div class="h-full bg-emerald-400 rounded-full" style="width: 45%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ACTIONS LIST -->
+        <section class="space-y-2">
+            <button
+                class="w-full bg-white px-6 py-5 rounded-2xl flex items-center justify-between group hover:bg-white/60 transition-all">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-ash flex items-center justify-center text-surface-dim">
+                        <span class="material-symbols-outlined text-[20px]">swap_horiz</span>
+                    </div>
+                    <span class="font-body font-semibold text-surface-dim">Change plan</span>
+                </div>
+                <span
+                    class="material-symbols-outlined text-surface-container-highest/30 group-hover:translate-x-1 transition-transform">chevron_right</span>
+            </button>
+            <button
+                class="w-full bg-white px-6 py-5 rounded-2xl flex items-center justify-between group hover:bg-white/60 transition-all">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-ash flex items-center justify-center text-surface-dim">
+                        <span class="material-symbols-outlined text-[20px]">receipt_long</span>
+                    </div>
+                    <span class="font-body font-semibold text-surface-dim">Billing history</span>
+                </div>
+                <span
+                    class="material-symbols-outlined text-surface-container-highest/30 group-hover:translate-x-1 transition-transform">chevron_right</span>
+            </button>
+            <button
+                class="w-full bg-white px-6 py-5 rounded-2xl flex items-center justify-between group hover:bg-red-50/50 transition-all">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center text-red-500">
+                        <span class="material-symbols-outlined text-[20px]">cancel</span>
+                    </div>
+                    <span class="font-body font-semibold text-red-600">Cancel subscription</span>
+                </div>
+                <span
+                    class="material-symbols-outlined text-red-300 group-hover:translate-x-1 transition-transform">chevron_right</span>
+            </button>
+        </section>
+    </main>
+    <!-- Bottom Navigation (Shared Component) -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-ash/80 backdrop-blur-xl px-12 py-6 flex justify-between items-center border-t border-black/[0.03]">
+        <div class="flex flex-col items-center gap-1 group cursor-pointer">
+            <span class="material-symbols-outlined text-primary-container text-[26px]"
+                style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+            <div class="w-1 h-1 rounded-full bg-primary-container"></div>
+        </div>
+        <div
+            class="flex flex-col items-center gap-1 group cursor-pointer opacity-30 hover:opacity-100 transition-opacity">
+            <span class="material-symbols-outlined text-surface-dim text-[26px]">sunny</span>
+        </div>
+        <div
+            class="flex flex-col items-center gap-1 group cursor-pointer opacity-30 hover:opacity-100 transition-opacity">
+            <span class="material-symbols-outlined text-surface-dim text-[26px]">settings</span>
+        </div>
+    </nav>
+</body>
+
+</html>
+
+<!-- Settings Screen -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;family=Space+Grotesk:wght@500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#35343a",
+                        "on-surface": "#e4e1e9",
+                        "on-secondary-container": "#b9b5d0",
+                        "on-background": "#e4e1e9",
+                        "secondary": "#c8c3de",
+                        "on-tertiary": "#2f3033",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "surface-container-high": "#2a292f",
+                        "surface-variant": "#35343a",
+                        "on-tertiary-fixed-variant": "#46474a",
+                        "surface-container-low": "#1b1b20",
+                        "surface-bright": "#39383e",
+                        "background": "#131318",
+                        "tertiary-fixed-dim": "#c6c6ca",
+                        "surface": "#131318",
+                        "primary-container": "#6c47ff",
+                        "tertiary-container": "#6b6c6f",
+                        "on-secondary-fixed": "#1b192d",
+                        "surface-tint": "#c9beff",
+                        "outline-variant": "#484556",
+                        "tertiary": "#c6c6ca",
+                        "primary-fixed-dim": "#c9beff",
+                        "on-tertiary-container": "#efeef2",
+                        "on-primary": "#2f009b",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "primary-fixed": "#e6deff",
+                        "tertiary-fixed": "#e3e2e6",
+                        "secondary-fixed": "#e4dffb",
+                        "on-secondary-fixed-variant": "#47445a",
+                        "inverse-primary": "#5e35f1",
+                        "on-surface-variant": "#c9c3d9",
+                        "outline": "#938ea2",
+                        "on-primary-fixed": "#1b0063",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container": "#1f1f24",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c3de",
+                        "on-secondary": "#302e43",
+                        "secondary-container": "#49475d",
+                        "inverse-on-surface": "#303035",
+                        "on-primary-fixed-variant": "#4500d8",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#f1ebff",
+                        "primary": "#c9beff",
+                        "ash": "#F4F3F7",
+                        "violet": "#6C47FF"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F4F3F7;
+            /* Ash light screen as requested */
+            color: #131318;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .ash-bg {
+            background-color: #F4F3F7;
+        }
+
+        .violet-pill {
+            background-color: #6C47FF;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .white-card {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .label-mono {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.6875rem;
+            color: #484556;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="ash-bg min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-surface-container-highest cursor-pointer"
+                data-icon="arrow_back">arrow_back</span>
+            <h1 class="font-headline text-xl font-extrabold tracking-tight">Zevi</h1>
+        </div>
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-surface-container-highest cursor-pointer"
+                data-icon="account_circle">account_circle</span>
+        </div>
+    </header>
+    <main class="flex-1 max-w-xl mx-auto w-full px-6 py-8 space-y-6">
+        <!-- Header Title -->
+        <div class="mb-4">
+            <h2 class="text-3xl font-headline font-extrabold text-surface-container-highest">Settings</h2>
+        </div>
+        <!-- PROFILE SECTION -->
+        <section class="white-card p-6 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-2xl overflow-hidden bg-surface-container-low border-2 border-ash">
+                    <img alt="User Avatar" class="w-full h-full object-cover"
+                        data-alt="Professional male portrait for profile avatar"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE5BjjbJwnQUHa9R7Il8XUhpbCaiwM-yWVPX24Ys-D_NHVktCW0y1Md2kBOKaOe6oYQqRDOLN7sHV4UoIMwhBLCzeJ0Ys-nc-n2YrruWajt3-zxWR2EN0hlsNclhCeUWTvf9BhHyO6pIIMs3jZpbhxRQFp_8TO24mflqsooTkbbM0-ozRlH1SgSvM4tT5SKwSKKQsd3snErXVtx3ZaXY5bGvr2in0XxdNiEmax1eha_slrl1wySvzC8Z73JXQvReMdi_u-hs_ePS8" />
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h3 class="font-bold text-lg text-surface-container-highest">Alex Sterling</h3>
+                        <span class="violet-pill">Pro</span>
+                    </div>
+                    <p class="text-sm text-outline font-medium">alex.sterling@zevi.ai</p>
+                </div>
+            </div>
+            <span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+        </section>
+        <!-- SETTINGS GROUPS -->
+        <!-- 1. Assistant -->
+        <div class="space-y-3">
+            <h4 class="label-mono px-2">ASSISTANT</h4>
+            <div class="white-card divide-y divide-ash">
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-violet" data-icon="wb_sunny">wb_sunny</span>
+                        <span class="text-sm font-semibold">Morning briefing</span>
+                    </div>
+                    <div class="w-10 h-6 bg-violet rounded-full relative p-1 cursor-pointer">
+                        <div class="w-4 h-4 bg-white rounded-full translate-x-4"></div>
+                    </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-outline" data-icon="language">language</span>
+                        <span class="text-sm font-semibold">Language</span>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <span class="text-xs text-outline font-medium">English (US)</span>
+                        <span class="material-symbols-outlined text-outline text-sm"
+                            data-icon="expand_more">expand_more</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 2. Accounts -->
+        <div class="space-y-3">
+            <h4 class="label-mono px-2">ACCOUNTS</h4>
+            <div class="white-card divide-y divide-ash">
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-outline" data-icon="google">google</span>
+                        <span class="text-sm font-semibold">Google accounts</span>
+                    </div>
+                    <span class="material-symbols-outlined text-outline text-sm"
+                        data-icon="arrow_forward_ios">arrow_forward_ios</span>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-outline" data-icon="link">link</span>
+                        <span class="text-sm font-semibold">Linked services</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <div class="w-6 h-6 rounded-full bg-ash flex items-center justify-center">
+                            <span class="material-symbols-outlined text-[12px]" data-icon="terminal">terminal</span>
+                        </div>
+                        <div class="w-6 h-6 rounded-full bg-ash flex items-center justify-center">
+                            <span class="material-symbols-outlined text-[12px]" data-icon="hub">hub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 3. App -->
+        <div class="space-y-3">
+            <h4 class="label-mono px-2">APP</h4>
+            <div class="white-card divide-y divide-ash">
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-outline" data-icon="palette">palette</span>
+                        <span class="text-sm font-semibold">Appearance</span>
+                    </div>
+                    <span class="text-xs text-violet font-bold">System Dark</span>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-outline"
+                            data-icon="notifications">notifications</span>
+                        <span class="text-sm font-semibold">Notifications</span>
+                    </div>
+                    <span class="material-symbols-outlined text-outline text-sm"
+                        data-icon="arrow_forward_ios">arrow_forward_ios</span>
+                </div>
+            </div>
+        </div>
+        <!-- 4. Subscription -->
+        <div class="space-y-3">
+            <h4 class="label-mono px-2">SUBSCRIPTION</h4>
+            <div class="white-card p-4 flex items-center justify-between border-2 border-violet/10">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-violet/10 rounded-lg">
+                        <span class="material-symbols-outlined text-violet" data-icon="workspace_premium"
+                            style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                    </div>
+                    <div>
+                        <span class="text-sm font-bold block">Zevi Pro</span>
+                        <span class="text-[10px] text-outline label-mono">Next billing Oct 24, 2024</span>
+                    </div>
+                </div>
+                <button
+                    class="bg-surface-container-highest text-white px-4 py-2 rounded-xl text-xs font-bold">Manage</button>
+            </div>
+        </div>
+        <!-- Logout Button -->
+        <div class="pt-6 pb-12 text-center">
+            <button
+                class="text-red-500 font-bold flex items-center justify-center gap-2 w-full py-4 white-card hover:bg-red-50 transition-colors">
+                <span class="material-symbols-outlined text-red-500" data-icon="logout">logout</span>
+                Logout
+            </button>
+        </div>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-ash px-8 py-3 flex justify-between items-center z-50">
+        <button class="flex flex-col items-center gap-1">
+            <span class="material-symbols-outlined text-outline" data-icon="chat_bubble">chat_bubble</span>
+        </button>
+        <button class="flex flex-col items-center gap-1">
+            <span class="material-symbols-outlined text-outline" data-icon="sunny">sunny</span>
+        </button>
+        <button class="flex flex-col items-center gap-1">
+            <span class="material-symbols-outlined text-violet" data-icon="settings"
+                style="font-variation-settings: 'FILL' 1;">settings</span>
+            <div class="w-1 h-1 bg-violet rounded-full"></div>
+        </button>
+    </nav>
+    <!-- Invisible iOS Keyboard Placeholder for layout balance -->
+    <div class="h-8"></div>
+</body>
+
+</html>
+
+<!-- Connected Accounts -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;family=Space+Grotesk:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#35343a",
+                        "on-surface": "#e4e1e9",
+                        "on-secondary-container": "#b9b5d0",
+                        "on-background": "#e4e1e9",
+                        "secondary": "#c8c3de",
+                        "on-tertiary": "#2f3033",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "surface-container-high": "#2a292f",
+                        "surface-variant": "#35343a",
+                        "on-tertiary-fixed-variant": "#46474a",
+                        "surface-container-low": "#1b1b20",
+                        "surface-bright": "#39383e",
+                        "background": "#131318",
+                        "tertiary-fixed-dim": "#c6c6ca",
+                        "surface": "#131318",
+                        "primary-container": "#6c47ff",
+                        "tertiary-container": "#6b6c6f",
+                        "on-secondary-fixed": "#1b192d",
+                        "surface-tint": "#c9beff",
+                        "outline-variant": "#484556",
+                        "tertiary": "#c6c6ca",
+                        "primary-fixed-dim": "#c9beff",
+                        "on-tertiary-container": "#efeef2",
+                        "on-primary": "#2f009b",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "primary-fixed": "#e6deff",
+                        "tertiary-fixed": "#e3e2e6",
+                        "secondary-fixed": "#e4dffb",
+                        "on-secondary-fixed-variant": "#47445a",
+                        "inverse-primary": "#5e35f1",
+                        "on-surface-variant": "#c9c3d9",
+                        "outline": "#938ea2",
+                        "on-primary-fixed": "#1b0063",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container": "#1f1f24",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c3de",
+                        "on-secondary": "#302e43",
+                        "secondary-container": "#49475d",
+                        "inverse-on-surface": "#303035",
+                        "on-primary-fixed-variant": "#4500d8",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#f1ebff",
+                        "primary": "#c9beff"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        body {
+            background-color: #F4F3F7;
+            color: #131318;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <!-- Top Navigation (Shared Component Integration) -->
+    <nav class="sticky top-0 z-50 bg-[#F4F3F7]/80 backdrop-blur-md px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <button class="w-10 h-10 flex items-center justify-center rounded-xl bg-white shadow-sm">
+                <span class="material-symbols-outlined text-surface-container-highest">arrow_back</span>
+            </button>
+            <h1 class="font-headline text-xl font-bold tracking-tight">Zevi</h1>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="font-label text-[10px] uppercase tracking-widest text-outline">Account Center</span>
+            <span class="material-symbols-outlined text-primary-container"
+                style="font-variation-settings: 'FILL' 1;">account_circle</span>
+        </div>
+    </nav>
+    <main class="max-w-3xl mx-auto px-6 py-12">
+        <!-- Header Section -->
+        <header class="mb-10">
+            <h2 class="font-headline text-4xl font-extrabold text-surface-container-lowest tracking-tighter mb-2">Google
+                accounts</h2>
+            <p class="text-on-secondary-fixed-variant font-medium">Manage your connected workspaces and synchronize AI
+                preferences across your Google ecosystem.</p>
+        </header>
+        <!-- Connected Accounts Container -->
+        <div class="space-y-6">
+            <!-- Account Card 1 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-white">
+                <div class="p-6 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center">
+                            <img alt="Google Logo" class="w-6 h-6" data-alt="Official Google G logo icon"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJyAn0VyiE3HYBzFI26UBoAmGxT2OhrAYVkTaE2Pyt3YIYH15Uugf1JlP81OuZRavPRPJakhW1vUyduo2wUBle8723wXtSUxFIbsaw36B4yOGDP8izcNuedscS2UrzWlkPgrJc6aa3ar9qL2SE_JuN1d5dzuFzQMjdV-3Pw29wI12rhmhGW4R5cCjA3WzPDCx4tiHhtdlGkj0_BW8MvJT5cesx7VL0YldOpXsonw6t1jbR8jY_wF6aVxxjjArQQem7WxYgePwos3k" />
+                        </div>
+                        <div>
+                            <p class="font-headline font-bold text-surface-container-lowest">alex.design@gmail.com</p>
+                            <p class="font-label text-xs text-outline tracking-tight">Connected 12 days ago</p>
+                        </div>
+                    </div>
+                    <span
+                        class="px-3 py-1 bg-primary-container text-white text-[10px] font-bold font-label rounded-lg tracking-widest uppercase">Primary</span>
+                </div>
+                <!-- Expandable Section -->
+                <div class="px-6 pb-6 pt-2">
+                    <div class="bg-[#F4F3F7] rounded-lg p-5">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3
+                                class="font-label text-xs font-bold uppercase tracking-widest text-surface-container-highest">
+                                Active Permissions</h3>
+                            <span class="material-symbols-outlined text-outline text-sm">expand_less</span>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary-container text-lg"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                <span class="text-sm font-medium text-surface-container-highest">Read access to Google
+                                    Drive files</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary-container text-lg"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                <span class="text-sm font-medium text-surface-container-highest">Sync with Google
+                                    Calendar events</span>
+                            </li>
+                            <li class="flex items-center gap-3 opacity-50">
+                                <span
+                                    class="material-symbols-outlined text-outline text-lg">radio_button_unchecked</span>
+                                <span
+                                    class="text-sm font-medium text-surface-container-highest italic text-outline">Write
+                                    access to Gmail (Disabled)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Account Card 2 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-white">
+                <div class="p-6 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center">
+                            <img alt="Google Logo" class="w-6 h-6" data-alt="Official Google G logo icon secondary"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE9OBVGwIdQ1rzOwYPJCCM7oyWYaiUYuC8O4Ey0yQVFW7EJg6RxrfpORRGk44zvN9dDD0L5-alMWB_1quaOJHUD4MXyfKmnQffj4COxrFrWhWyTqMMhpCB9d2zCSqHhOI61arZzF_vPJPvYB6qbS7yXbp8rJzv7FXQycCkuU6unoJyPfsnyyMkcdbY7m1kIxSkWayVLoBY1cxSCSkxgjyrYelJrgwOYMBO-LqcnUAjPOONMYopYeoTxCi2MBqjXfMO97a83hZq-dw" />
+                        </div>
+                        <div>
+                            <p class="font-headline font-bold text-surface-container-lowest">work.hq@company.com</p>
+                            <p class="font-label text-xs text-outline tracking-tight">Enterprise managed</p>
+                        </div>
+                    </div>
+                    <button
+                        class="text-red-600 font-label text-[10px] font-bold tracking-widest uppercase hover:underline">Remove</button>
+                </div>
+                <div class="px-6 pb-6">
+                    <div
+                        class="flex items-center justify-between cursor-pointer hover:bg-surface-container-lowest/5 p-2 rounded transition-colors">
+                        <span class="text-xs font-label text-outline uppercase tracking-wider">Expand Permissions</span>
+                        <span class="material-symbols-outlined text-outline text-sm">expand_more</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Another Account Button -->
+            <button
+                class="w-full py-8 border-2 border-dashed border-primary-container/30 rounded-xl flex flex-col items-center justify-center gap-3 hover:bg-primary-container/5 transition-all group">
+                <div
+                    class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-primary-container">add</span>
+                </div>
+                <span class="font-headline font-bold text-primary-container text-sm">+ Add another Google account</span>
+            </button>
+        </div>
+        <!-- Footer / Legal Section -->
+        <footer class="mt-16 pt-8 border-t border-outline-variant/10">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div class="space-y-1">
+                    <p class="font-label text-[10px] text-outline uppercase tracking-[0.2em]">Security Protocol</p>
+                    <p class="text-xs text-on-secondary-fixed-variant max-w-xs">Zevi uses 256-bit encryption to protect
+                        your account tokens. We never store your Google password.</p>
+                </div>
+                <div class="flex gap-4">
+                    <a class="text-xs font-bold text-surface-container-highest hover:text-primary-container transition-colors"
+                        href="#">Privacy Policy</a>
+                    <a class="text-xs font-bold text-surface-container-highest hover:text-primary-container transition-colors"
+                        href="#">Terms of Access</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <!-- Floating Navigation Bar (Shared Component Integration) -->
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-full max-w-md px-6">
+        <div
+            class="bg-surface-container-highest text-on-surface rounded-full shadow-2xl py-3 px-8 flex items-center justify-between">
+            <button class="flex items-center justify-center p-2 rounded-full bg-primary-container text-white">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+            </button>
+            <button
+                class="flex items-center justify-center p-2 rounded-full hover:bg-surface-container-high transition-colors">
+                <span class="material-symbols-outlined text-on-surface-variant">sunny</span>
+            </button>
+            <button
+                class="flex items-center justify-center p-2 rounded-full hover:bg-surface-container-high transition-colors">
+                <span class="material-symbols-outlined text-on-surface-variant">settings</span>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- Morning Briefing -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Zevi - Smart Assistant</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#35343a",
+                        "on-surface": "#e4e1e9",
+                        "on-secondary-container": "#b9b5d0",
+                        "on-background": "#e4e1e9",
+                        "secondary": "#c8c3de",
+                        "on-tertiary": "#2f3033",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "surface-container-high": "#2a292f",
+                        "surface-variant": "#35343a",
+                        "on-tertiary-fixed-variant": "#46474a",
+                        "surface-container-low": "#1b1b20",
+                        "surface-bright": "#39383e",
+                        "background": "#131318",
+                        "tertiary-fixed-dim": "#c6c6ca",
+                        "surface": "#131318",
+                        "primary-container": "#6c47ff",
+                        "tertiary-container": "#6b6c6f",
+                        "on-secondary-fixed": "#1b192d",
+                        "surface-tint": "#c9beff",
+                        "outline-variant": "#484556",
+                        "tertiary": "#c6c6ca",
+                        "primary-fixed-dim": "#c9beff",
+                        "on-tertiary-container": "#efeef2",
+                        "on-primary": "#2f009b",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "primary-fixed": "#e6deff",
+                        "tertiary-fixed": "#e3e2e6",
+                        "secondary-fixed": "#e4dffb",
+                        "on-secondary-fixed-variant": "#47445a",
+                        "inverse-primary": "#5e35f1",
+                        "on-surface-variant": "#c9c3d9",
+                        "outline": "#938ea2",
+                        "on-primary-fixed": "#1b0063",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container": "#1f1f24",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c3de",
+                        "on-secondary": "#302e43",
+                        "secondary-container": "#49475d",
+                        "inverse-on-surface": "#303035",
+                        "on-primary-fixed-variant": "#4500d8",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#f1ebff",
+                        "primary": "#c9beff"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0d0d12;
+            color: #e4e1e9;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .logo-text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .mono-label {
+            font-family: 'Space Grotesk', monospace;
+        }
+
+        .glass-nav {
+            background: rgba(19, 19, 24, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-[#0D0D12] min-h-screen flex flex-col">
+    <!-- Shared Component: TopAppBar -->
+    <header class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 glass-nav">
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-on-surface cursor-pointer">arrow_back</span>
+            <h1 class="logo-text text-xl font-bold">
+                <span class="text-white">Ze</span><span class="text-[#6C47FF]">vi</span>
+            </h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-on-surface cursor-pointer">account_circle</span>
+        </div>
+    </header>
+    <!-- Main Canvas -->
+    <main class="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-8 max-w-3xl mx-auto w-full">
+        <!-- AI Agent Message Container -->
+        <div class="relative pl-8">
+            <!-- AI Accent Line -->
+            <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-[#6C47FF] rounded-full"></div>
+            <!-- AI Bubble Header -->
+            <div class="flex items-center gap-3 mb-6">
+                <div class="bg-primary-container p-2 rounded-xl flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white"
+                        style="font-variation-settings: 'FILL' 1;">sunny</span>
+                </div>
+                <h2 class="font-headline text-xl text-white">Good morning, Rahul</h2>
+            </div>
+            <!-- AI Content (The "Bubble" context) -->
+            <div class="flex flex-col gap-6">
+                <p class="text-on-surface text-base leading-relaxed max-w-xl">
+                    I've summarized your day. You have a busy morning ahead, but the afternoon looks clear for deep
+                    work.
+                </p>
+                <!-- Bento Grid of Mini-Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <!-- Calendar Card -->
+                    <div class="bg-[#0F0E14] p-5 rounded-xl border border-white/5 flex flex-col gap-4">
+                        <span class="material-symbols-outlined text-primary">calendar_today</span>
+                        <div>
+                            <p class="mono-label text-[10px] text-outline uppercase tracking-wider">Schedule</p>
+                            <p class="text-on-surface font-medium">3 meetings today</p>
+                        </div>
+                    </div>
+                    <!-- Mail Card -->
+                    <div class="bg-[#0F0E14] p-5 rounded-xl border border-white/5 flex flex-col gap-4">
+                        <span class="material-symbols-outlined text-primary">mail</span>
+                        <div>
+                            <p class="mono-label text-[10px] text-outline uppercase tracking-wider">Inbox</p>
+                            <p class="text-on-surface font-medium">12 unread emails</p>
+                        </div>
+                    </div>
+                    <!-- Bell Card -->
+                    <div class="bg-[#0F0E14] p-5 rounded-xl border border-white/5 flex flex-col gap-4">
+                        <span class="material-symbols-outlined text-primary">notifications</span>
+                        <div>
+                            <p class="mono-label text-[10px] text-outline uppercase tracking-wider">Tasks</p>
+                            <p class="text-on-surface font-medium">2 reminders</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- AI Status Heartbeat -->
+                <div class="flex items-center gap-2 mt-2">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    <span class="mono-label text-[11px] text-primary uppercase tracking-widest">System Ready</span>
+                </div>
+            </div>
+        </div>
+        <!-- Quick Reply Chips -->
+        <div class="flex flex-wrap gap-3 mt-4">
+            <button
+                class="px-5 py-2.5 bg-surface-container-high hover:bg-surface-container-highest transition-colors text-on-surface text-sm font-medium rounded-xl border border-white/5">
+                Open calendar
+            </button>
+            <button
+                class="px-5 py-2.5 bg-surface-container-high hover:bg-surface-container-highest transition-colors text-on-surface text-sm font-medium rounded-xl border border-white/5">
+                Check emails
+            </button>
+            <button
+                class="px-5 py-2.5 bg-primary-container hover:opacity-90 transition-opacity text-white text-sm font-semibold rounded-xl shadow-lg shadow-primary-container/20">
+                Start my day
+            </button>
+        </div>
+    </main>
+    <!-- Shared Component: Composer & Keyboard Area -->
+    <div class="mt-auto">
+        <!-- Composer -->
+        <div class="px-6 py-6 bg-surface-dim">
+            <div class="max-w-3xl mx-auto">
+                <div
+                    class="bg-surface-container-lowest rounded-xl flex items-center p-2 gap-3 group focus-within:ring-1 ring-[#6C47FF]/30">
+                    <div
+                        class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-high flex items-center justify-center">
+                        <img alt="User Avatar" class="w-full h-full object-cover"
+                            data-alt="Portrait of a user in a professional setting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfQ-Q1C7oiioy9liuH94vPtNFr-woBc6GL6dEPv17y-tTKjR_wp8R01dXROJb9jct8DMBpWCVAvJ8uX82t8epNO94CQc8GbcLPUuuZGQTgJDLwHzDrAz6MZvQUU7mxr_7M5496MgNVwDcHlcqAWvLRpgzEbGdTMMUKgzrHoUSYy7VwXlUN4XTP79fjzn8kE2fJvxVx_JSTDyaJHFK9JLPcOVGifGXQv-fr7SnvrCXWhJBule6kwt9zAGV3mllmLtWno1cSI491yRY" />
+                    </div>
+                    <input
+                        class="flex-1 bg-transparent border-none focus:ring-0 text-white placeholder-outline text-sm py-2"
+                        placeholder="Ask Zevi anything..." type="text" />
+                    <div class="flex items-center gap-2 px-2">
+                        <span
+                            class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">attach_file</span>
+                        <span
+                            class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">mic</span>
+                        <div
+                            class="ml-2 w-9 h-9 bg-primary-container rounded-lg flex items-center justify-center cursor-pointer hover:opacity-90">
+                            <span class="material-symbols-outlined text-white text-sm">send</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Shared Component: BottomNavBar -->
+        <nav class="flex items-center justify-around py-3 bg-surface-container-low border-t border-white/5">
+            <div class="flex flex-col items-center gap-1 text-primary">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+                <span class="text-[10px] mono-label font-medium">Chat</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 text-outline">
+                <span class="material-symbols-outlined">sunny</span>
+                <span class="text-[10px] mono-label">Routine</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 text-outline">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="text-[10px] mono-label">Settings</span>
+            </div>
+        </nav>
+        <!-- Shared Component: iOSKeyboard (Visual Placeholder) -->
+        <div class="bg-[#1C1C1E] h-1 w-32 mx-auto mb-2 rounded-full mt-4"></div>
+    </div>
+</body>
+
+</html>
